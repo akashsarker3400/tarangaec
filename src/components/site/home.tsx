@@ -127,7 +127,7 @@ export function Catalogue() {
       id="catalogue"
       label="Catalogue"
       title="Folk first. Then everything else."
-      sub="Regional traditions preserved and released — from the largest folk collection in Bangladesh to modern, film and devotional music."
+      sub="Regional traditions preserved and released — from one of the largest folk collections in Bangladesh to modern, film and devotional music."
       action={
         <Link href="/music" className="group inline-flex items-center gap-1.5 text-[15px] font-semibold">
           Browse the catalogue
@@ -141,7 +141,7 @@ export function Catalogue() {
           expandedHeight={320}
           items={rows.map((g, i) => ({
             label: g,
-            sublabel: i === 0 ? "Largest collection" : "Genre",
+            sublabel: i === 0 ? "Our heritage" : "Genre",
             image: `/covers/${g.toLowerCase()}.svg`,
             imageAlt: `${g} artwork`,
             description: i === 0 ? "Baul, Bhatiali, Bhawaiya, Lalon and more" : undefined,
@@ -150,7 +150,7 @@ export function Catalogue() {
       </Reveal>
       <div className="mt-10 grid grid-cols-2 gap-3 md:hidden">
         {rows.map((g, i) => (
-          <CoverTile key={g} title={g} sub={i === 0 ? "Largest collection" : undefined} colorClass={i === 0 ? "bg-sky" : SPECTRUM[i % 4]} />
+          <CoverTile key={g} title={g} sub={i === 0 ? "Our heritage" : undefined} colorClass={i === 0 ? "bg-sky" : SPECTRUM[i % 4]} />
         ))}
       </div>
     </Section>

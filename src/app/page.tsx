@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Marquee items={["Since the cassette era", "CD · Cassette · Digital", "Folk · Baul · Bhatiali · Modern", "Largest folk collection in Bangladesh", "Live the magic of music"]} />
+      <Marquee items={["Since the cassette era", "CD · Cassette · Digital", "Folk · Baul · Bhatiali · Modern", "One of the oldest labels in Bangladesh", "Live the magic of music"]} />
       <Stats />
       <WhatWeDo />
       <Catalogue />

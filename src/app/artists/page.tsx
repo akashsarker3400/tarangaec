@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Check } from "lucide-react";
-import { artists, faq, site } from "@/data/site";
+import { artists, faq } from "@/data/site";
 import { ArrowUpRight, PageHead, Reveal, Section } from "@/components/site/shared";
 import { Faq } from "@/components/site/faq";
 
@@ -11,7 +11,7 @@ export default function Artists() {
     <>
       <PageHead label="For artists" title={artists.title} sub={artists.sub}>
         <Reveal delay={0.1}>
-          <a href={`mailto:${site.email}?subject=Music%20submission`} className="btn-primary mt-8">
+          <a href={`mailto:${artists.email}?subject=Music%20submission`} className="btn-primary mt-8">
             Email your music
             <ArrowUpRight className="size-4" />
           </a>
@@ -43,9 +43,9 @@ export default function Artists() {
             </ul>
           </Reveal>
           <Reveal delay={0.06} className="rounded-[24px] bg-sky p-7 text-ink md:col-span-5 md:p-9">
-            <p className="label text-ink/70">Send to</p>
-            <a href={`mailto:${site.email}?subject=Music%20submission`} className="mt-2 block break-all font-heading text-[clamp(22px,2.2vw,30px)] font-extrabold tracking-[-0.02em] hover:underline">
-              {site.email}
+            <p className="label text-ink/70">A&amp;R · singers, music directors, lyricists</p>
+            <a href={`mailto:${artists.email}?subject=Music%20submission`} className="mt-2 block break-all font-heading text-[clamp(22px,2.2vw,30px)] font-extrabold tracking-[-0.02em] hover:underline">
+              {artists.email}
             </a>
             <p className="mt-4 text-[14px] text-ink/75">We listen to every submission and reply with next steps.</p>
           </Reveal>

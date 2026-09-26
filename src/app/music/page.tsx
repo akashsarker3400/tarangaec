@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { genres, socials } from "@/data/site";
 import { ArrowUpRight, CoverTile, PageHead, Reveal, SPECTRUM, Section } from "@/components/site/shared";
 
-export const metadata: Metadata = { title: "Music", description: "The Taranga catalogue: the largest folk-music collection in Bangladesh, plus modern, film and devotional music." };
+export const metadata: Metadata = { title: "Music", description: "The Taranga catalogue: one of the largest folk-music collections in Bangladesh, plus modern, film and devotional music." };
 
 export default function Music() {
   return (
     <>
-      <PageHead label="Catalogue" title="The largest folk-music collection in Bangladesh." sub="Songs, artists and traditions from every region — preserved and released to the world. Browse by genre, then listen on your platform." />
+      <PageHead label="Catalogue" title="One of the largest folk-music collections in Bangladesh." sub="Songs, artists and traditions from every region — preserved and released to the world. Browse by genre, then listen on your platform." />
       <div className="container-x">
         <Reveal>
           <ul className="flex flex-wrap gap-2">
@@ -19,7 +19,7 @@ export default function Music() {
           </ul>
         </Reveal>
       </div>
-      <Section label="Genres" title="Folk, first and largest.">
+      <Section label="Genres" title="Folk first. Then everything else.">
         <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
           <Reveal className="col-span-2 row-span-2">
             <CoverTile title="Folk" sub="Baul · Bhatiali · Bhawaiya · Lalon" colorClass="bg-sky" large className="h-full" />
@@ -31,8 +31,8 @@ export default function Music() {
           ))}
         </div>
       </Section>
-      <Section label="Listen" title="On every platform." tone="surface" className="pb-20 md:pb-28">
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
+      <Section label="Watch" title="Six channels on YouTube." tone="surface" className="pb-20 md:pb-28">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {socials.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.05}>
               <a href={s.href} target="_blank" rel="noopener noreferrer" className="card card-hover group flex items-center justify-between p-6">

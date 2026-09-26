@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { Play } from "lucide-react";
 
-import { brands, nav, site, socials } from "@/data/site";
+import { brands, contacts, nav, site } from "@/data/site";
 import { SpectrumRule } from "./shared";
 
 export function Footer() {
@@ -9,7 +10,7 @@ export function Footer() {
       <div className="container-x py-16">
         <SpectrumRule className="w-full" height={4} />
         <div className="mt-12 grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-5">
+          <div className="md:col-span-4">
             <p className="font-bengali text-[clamp(56px,7vw,96px)] leading-none font-bold">{site.bengali}</p>
             <p className="mt-4 max-w-sm text-[15px] text-white/75">{site.description}</p>
           </div>
@@ -29,24 +30,25 @@ export function Footer() {
             <p className="label mb-4 text-white/60">Brands</p>
             <ul className="space-y-2.5 text-[15px] text-white/85">
               {brands.map((b) => (
-                <li key={b.slug}>
+                <li key={b.slug} className="flex items-center gap-2">
                   <Link href={`/brands#${b.slug}`} className="hover:text-white">
                     {b.name}
                   </Link>
+                  <a href={b.youtube} target="_blank" rel="noopener noreferrer" aria-label={`${b.name} on YouTube`} className="text-white/50 hover:text-white">
+                    <Play className="size-3.5 fill-current" strokeWidth={1.75} />
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="md:col-span-2">
+          <div className="md:col-span-3">
             <p className="label mb-4 text-white/60">Contact</p>
-            <a href={`mailto:${site.email}`} className="text-[15px] text-white hover:underline">
-              {site.email}
-            </a>
-            <ul className="mt-4 space-y-2 text-[15px] text-white/85">
-              {socials.map((s) => (
-                <li key={s.label}>
-                  <a href={s.href} target="_blank" rel="noopener noreferrer" className="hover:text-white">
-                    {s.label}
+            <ul className="space-y-3 text-[15px]">
+              {contacts.map((c) => (
+                <li key={c.email}>
+                  <span className="block text-[12px] text-white/55">{c.label}</span>
+                  <a href={`mailto:${c.email}`} className="break-all text-white/90 hover:text-white hover:underline">
+                    {c.email}
                   </a>
                 </li>
               ))}

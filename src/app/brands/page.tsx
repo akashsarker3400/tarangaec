@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { brands } from "@/data/site";
-import { PageHead, Reveal } from "@/components/site/shared";
+import { ArrowUpRight, PageHead, Reveal } from "@/components/site/shared";
 
 export const metadata: Metadata = { title: "Brands", description: "Taranga Electro Centre and its five brands: Taranga Music Centre, Taranga Music, Taranga Entertainment, Bangla Entertainment and Bangla Drama." };
 
@@ -20,6 +20,10 @@ export default function Brands() {
                 <span className="label">{b.role}</span>
                 <h2 className="text-h2 mt-3">{b.name}</h2>
                 <p className="mt-4 max-w-[60ch] text-[17px] text-ink-muted">{b.text}</p>
+                <a href={b.youtube} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm mt-7">
+                  Watch on YouTube
+                  <ArrowUpRight className="size-4" />
+                </a>
               </div>
             </article>
           </Reveal>

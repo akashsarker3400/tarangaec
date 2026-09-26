@@ -18,7 +18,7 @@ export default function About() {
             <h2 className="text-h2">We believe in bringing the world closer together through music.</h2>
           </Reveal>
           <Reveal delay={0.05} className="space-y-5 text-[17px] text-ink-muted md:col-span-7">
-            <p>Taranga Electro Centre is a music label that holds the largest folk-music collection in Bangladesh. The label began before 2000, in the CD and cassette era, and has been part of the music industry for the two decades since.</p>
+            <p>Taranga Electro Centre was started by Subrata Kumar Deb in the days of CDs and cassettes, before 2000. There was no online music then: Taranga recorded folk artists and released their songs on CD, one album at a time. That catalogue grew into one of the largest folk-music collections in Bangladesh, and the label into one of the oldest still running.</p>
             <p>Over those years Taranga became an integral part of the entertainment business in rural Bangladesh. Today the group releases music, video and drama under five brands, reaching listeners on every major platform.</p>
             <p>So, to all the music lovers who believe in the magic of music: come join us, and live the magic of music with Taranga.</p>
           </Reveal>
