@@ -1,5 +1,5 @@
 import { Marquee } from "@/components/site/shared";
-import { ArtistsCta, Brands, Catalogue, Hero, Stats, Videos, WhatWeDo } from "@/components/site/home";
+import { ArtistsCta, Channels, Catalogue, Hero, Stats, Videos, WhatWeDo } from "@/components/site/home";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
       <Videos />
       <WhatWeDo />
       <Catalogue />
-      <Brands />
+      <Channels />
       <ArtistsCta />
     </>
   );

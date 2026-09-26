@@ -5,18 +5,18 @@ import { videos } from "@/data/videos";
 import { LiteYouTube } from "@/components/site/youtube";
 import { ArrowUpRight, PageHead, Reveal } from "@/components/site/shared";
 
-export const metadata: Metadata = { title: "Brands", description: "Taranga Electro Centre and its five brands: Taranga Music Centre, Taranga Music, Taranga Entertainment, Bangla Entertainment and Bangla Drama." };
+export const metadata: Metadata = { title: "Channels", description: "The six Taranga YouTube channels: Taranga Electro Centre, Taranga Music Centre, Taranga Music, Taranga Entertainment, Bangla Entertainment and Bangla Drama." };
 
-export default function Brands() {
+export default function Channels() {
   return (
     <>
-      <PageHead label="Brands" title="One label. Six names." sub="Taranga Electro Centre is the parent label. Every brand below is built and operated by Taranga." />
+      <PageHead label="Channels" title="One label. Six channels." sub="Every channel below is run by Taranga Electro Centre. Press play on the most-watched videos, or open the channel on YouTube." />
       <div className="container-x space-y-4 pb-20 md:pb-28">
         {brands.map((b, i) => (
           <Reveal key={b.slug} delay={Math.min(i * 0.04, 0.2)}>
             <article id={b.slug} className="card grid scroll-mt-24 overflow-hidden md:grid-cols-12">
-              <div className="flex min-h-[200px] items-center justify-center p-8 md:col-span-4" style={{ background: b.accent }}>
-                {b.logo ? <Image src={b.logo} alt={`${b.name} logo`} width={260} height={200} className="h-32 w-auto object-contain" /> : <span className="text-center font-heading text-[32px] leading-tight font-extrabold tracking-[-0.02em] text-white">{b.name}</span>}
+              <div className="flex min-h-[220px] items-center justify-center border-b border-line p-8 md:col-span-4 md:border-r md:border-b-0">
+                <Image src={b.logo} alt={`${b.name} logo`} width={300} height={220} className="h-36 w-auto object-contain" />
               </div>
               <div className="p-8 md:col-span-8 md:p-10">
                 <span className="label">{b.role}</span>

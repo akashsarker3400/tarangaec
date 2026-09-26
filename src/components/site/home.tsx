@@ -185,17 +185,17 @@ export function Videos() {
   );
 }
 
-/* ---------------- Brands ---------------- */
+/* ---------------- Channels ---------------- */
 
-export function Brands() {
+export function Channels() {
   return (
-    <Section id="brands" label="Brands" title="One label. Six names." sub="Taranga Electro Centre is the parent. The brands below are all Taranga." tone="surface">
+    <Section id="channels" label="Channels" title="One label. Six channels." sub="All six YouTube channels are run by Taranga Electro Centre." tone="surface">
       <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {brands.map((b, i) => (
           <Reveal key={b.slug} delay={i * 0.05}>
-            <Link href={`/brands#${b.slug}`} className="card card-hover flex h-full flex-col overflow-hidden">
-              <div className="flex h-28 items-center justify-center" style={{ background: b.accent }}>
-                {b.logo ? <Image src={b.logo} alt={`${b.name} logo`} width={200} height={140} className="h-20 w-auto object-contain" /> : <span className="font-heading text-[28px] font-extrabold tracking-[-0.02em] text-white">{b.name.split(" ")[0]}</span>}
+            <Link href={`/channels#${b.slug}`} className="card card-hover flex h-full flex-col overflow-hidden">
+              <div className="flex h-36 items-center justify-center border-b border-line bg-white">
+                <Image src={b.logo} alt={`${b.name} logo`} width={240} height={180} className="h-24 w-auto object-contain" />
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <span className="label">{b.role}</span>

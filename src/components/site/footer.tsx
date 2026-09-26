@@ -26,11 +26,11 @@ export function Footer() {
             </ul>
           </div>
           <div className="md:col-span-3">
-            <p className="label mb-4 text-white/60">Brands</p>
+            <p className="label mb-4 text-white/60">Channels</p>
             <ul className="space-y-2.5 text-[15px] text-white/85">
               {brands.map((b) => (
                 <li key={b.slug} className="flex items-center gap-2">
-                  <Link href={`/brands#${b.slug}`} className="hover:text-white">
+                  <Link href={`/channels#${b.slug}`} className="hover:text-white">
                     {b.name}
                   </Link>
                   <a href={b.youtube} target="_blank" rel="noopener noreferrer" aria-label={`${b.name} on YouTube`} className="text-[12px] text-white/50 hover:text-white">
