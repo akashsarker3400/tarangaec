@@ -8,7 +8,7 @@ import { CountUp } from "@/components/unlumen-ui/count-up";
 import { HoverExpand } from "@/components/unlumen-ui/hover-expand";
 import { MagneticButton } from "@/components/unlumen-ui/magnetic-button";
 import { TextReveal } from "@/components/unlumen-ui/text-reveal";
-import { brands, genres, hero, site, stats, whatWeDo } from "@/data/site";
+import { brands, genres, hero, stats, whatWeDo } from "@/data/site";
 import { featured, videos } from "@/data/videos";
 import { LiteYouTube } from "./youtube";
 import { cn } from "@/lib/utils";
