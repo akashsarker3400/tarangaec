@@ -32,7 +32,8 @@ export default function Brands() {
                   {videos[b.slug].slice(0, 3).map((v) => (
                     <div key={v.id}>
                       <LiteYouTube video={v} className="rounded-[14px]" />
-                      <p className="mt-2 truncate font-bengali text-[14px] font-bold text-ink">{v.title.split("।")[0].split("|")[0].trim()}</p>
+                      <p className="mt-2 truncate font-bengali text-[14px] font-bold text-ink">{v.title.split("।")[0].split("|")[0].split(" - ")[0].trim()}</p>
+                      <p className="text-[12px] text-ink-muted">{v.views} views</p>
                     </div>
                   ))}
                 </div>
