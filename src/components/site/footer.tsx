@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Play } from "lucide-react";
 
 import { brands, contacts, nav, site } from "@/data/site";
 import { SpectrumRule } from "./shared";
@@ -34,8 +33,8 @@ export function Footer() {
                   <Link href={`/brands#${b.slug}`} className="hover:text-white">
                     {b.name}
                   </Link>
-                  <a href={b.youtube} target="_blank" rel="noopener noreferrer" aria-label={`${b.name} on YouTube`} className="text-white/50 hover:text-white">
-                    <Play className="size-3.5 fill-current" strokeWidth={1.75} />
+                  <a href={b.youtube} target="_blank" rel="noopener noreferrer" aria-label={`${b.name} on YouTube`} className="text-[12px] text-white/50 hover:text-white">
+                    YT ↗
                   </a>
                 </li>
               ))}

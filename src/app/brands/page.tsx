@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { brands } from "@/data/site";
+import { videos } from "@/data/videos";
+import { LiteYouTube } from "@/components/site/youtube";
 import { ArrowUpRight, PageHead, Reveal } from "@/components/site/shared";
 
 export const metadata: Metadata = { title: "Brands", description: "Taranga Electro Centre and its five brands: Taranga Music Centre, Taranga Music, Taranga Entertainment, Bangla Entertainment and Bangla Drama." };
@@ -25,6 +27,16 @@ export default function Brands() {
                   <ArrowUpRight className="size-4" />
                 </a>
               </div>
+              {videos[b.slug]?.length ? (
+                <div className="grid gap-3 border-t border-line p-6 sm:grid-cols-3 md:col-span-12">
+                  {videos[b.slug].slice(0, 3).map((v) => (
+                    <div key={v.id}>
+                      <LiteYouTube video={v} className="rounded-[14px]" />
+                      <p className="mt-2 truncate font-bengali text-[14px] font-bold text-ink">{v.title.split("।")[0].split("|")[0].trim()}</p>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
             </article>
           </Reveal>
         ))}

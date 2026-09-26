@@ -3,13 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { Disc3, Film, Handshake, Music2 } from "lucide-react";
 
 import { CountUp } from "@/components/unlumen-ui/count-up";
 import { HoverExpand } from "@/components/unlumen-ui/hover-expand";
 import { MagneticButton } from "@/components/unlumen-ui/magnetic-button";
 import { TextReveal } from "@/components/unlumen-ui/text-reveal";
 import { brands, genres, hero, site, stats, whatWeDo } from "@/data/site";
+import { featured, videos } from "@/data/videos";
+import { LiteYouTube } from "./youtube";
 import { cn } from "@/lib/utils";
 import { ArrowRight, CoverTile, Reveal, SPECTRUM, Section, SpectrumRule } from "./shared";
 
@@ -25,10 +26,7 @@ export function Hero() {
       <div className="container-x grid items-center gap-10 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <Reveal>
-            <div className="flex items-center gap-3">
-              <span className="font-bengali text-[18px] font-bold text-sky-ink">{site.bengali}</span>
-              <span className="label">{hero.kicker}</span>
-            </div>
+            <span className="label">{hero.kicker}</span>
             <SpectrumRule className="mt-3" />
           </Reveal>
           <h1 className="text-h1 mt-7 max-w-[16ch]">
@@ -52,13 +50,16 @@ export function Hero() {
 
         <motion.div style={reduce ? undefined : { y }} className="lg:col-span-5">
           <Reveal delay={0.15}>
-            <div className="relative overflow-hidden rounded-[28px] bg-sky p-6 md:p-8">
-              <Image src="/brand/taranga.png" alt="Taranga emblem: the Bengali word তরঙ্গ above a treble clef on a spectrum" width={624} height={800} priority className="mx-auto h-auto w-[70%] max-w-[300px] rounded-[16px]" />
-              <div className="mt-6 grid grid-cols-3 gap-2">
-                <CoverTile title="Folk" sub="Baul · Bhatiali" colorClass="bg-white" />
-                <CoverTile title="1990s" sub="Cassette era" colorClass="bg-ink text-white" className="[&_span]:text-white/70 [&_p]:text-white" />
-                <CoverTile title="20+ yrs" sub="in music" colorClass="bg-white" />
+            <LiteYouTube video={featured} priority className="rounded-[24px]" />
+            <div className="mt-4 flex items-start justify-between gap-4">
+              <div className="min-w-0">
+                <p className="label">Most watched</p>
+                <p className="mt-1 truncate font-bengali text-[16px] font-bold text-ink">{featured.title.split("।")[0].split("|")[0].trim()}</p>
               </div>
+              <a href={brands[0].youtube} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm shrink-0">
+                YouTube
+                <ArrowRight className="size-3.5 -rotate-45" />
+              </a>
             </div>
           </Reveal>
         </motion.div>
@@ -95,24 +96,20 @@ export function Stats() {
 
 /* ---------------- What we do ---------------- */
 
-const ICONS = [Music2, Disc3, Film, Handshake];
-
 export function WhatWeDo() {
   return (
     <Section id="what" label="What we do" title={whatWeDo.title} sub={whatWeDo.sub} tone="surface">
       <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {whatWeDo.items.map((it, i) => {
-          const Icon = ICONS[i];
-          return (
-            <Reveal key={it.title} delay={i * 0.06} className="card card-hover flex h-full flex-col p-7">
-              <span className={cn("grid size-11 place-items-center rounded-2xl text-ink", SPECTRUM[i])}>
-                <Icon className="size-5" strokeWidth={1.75} aria-hidden />
-              </span>
-              <h3 className="text-h3 mt-7">{it.title}</h3>
-              <p className="mt-2 text-[15px] text-ink-muted">{it.text}</p>
-            </Reveal>
-          );
-        })}
+        {whatWeDo.items.map((it, i) => (
+          <Reveal key={it.title} delay={i * 0.06} className="card card-hover flex h-full flex-col p-7">
+            <div className="flex items-center justify-between">
+              <span className="font-heading text-[15px] font-bold tracking-[-0.01em] text-ink-muted tabular-nums">0{i + 1}</span>
+              <span className={cn("h-1 w-8 rounded-full", SPECTRUM[i])} aria-hidden />
+            </div>
+            <h3 className="text-h3 mt-10">{it.title}</h3>
+            <p className="mt-2 text-[15px] text-ink-muted">{it.text}</p>
+          </Reveal>
+        ))}
       </div>
     </Section>
   );
@@ -151,6 +148,37 @@ export function Catalogue() {
       <div className="mt-10 grid grid-cols-2 gap-3 md:hidden">
         {rows.map((g, i) => (
           <CoverTile key={g} title={g} sub={i === 0 ? "Our heritage" : undefined} colorClass={i === 0 ? "bg-sky" : SPECTRUM[i % 4]} />
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* ---------------- Top videos ---------------- */
+
+export function Videos() {
+  const picks = brands.map((b) => ({ brand: b, video: videos[b.slug]?.[0] })).filter((x) => x.video);
+  return (
+    <Section
+      id="videos"
+      label="Watch"
+      title="Most watched, across six channels."
+      sub="The most popular video from each Taranga channel. Press play; it streams from YouTube."
+    >
+      <div className="mt-12 grid gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+        {picks.map(({ brand, video }, i) => (
+          <Reveal key={video!.id} delay={Math.min(i * 0.05, 0.25)}>
+            <LiteYouTube video={video!} />
+            <div className="mt-4 flex items-start gap-3">
+              <span className="mt-1.5 size-2.5 shrink-0 rounded-full" style={{ background: brand.accent }} aria-hidden />
+              <div className="min-w-0">
+                <p className="truncate font-bengali text-[16px] font-bold text-ink">{video!.title.split("।")[0].split("|")[0].trim()}</p>
+                <a href={brand.youtube} target="_blank" rel="noopener noreferrer" className="mt-0.5 block text-[14px] text-ink-muted hover:text-ink">
+                  {brand.name}
+                </a>
+              </div>
+            </div>
+          </Reveal>
         ))}
       </div>
     </Section>
