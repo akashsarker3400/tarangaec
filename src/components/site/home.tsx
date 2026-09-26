@@ -54,7 +54,7 @@ export function Hero() {
             <div className="mt-4 flex items-start justify-between gap-4">
               <div className="min-w-0">
                 <p className="label">Most watched · {featured.views} views</p>
-                <p className="mt-1 truncate font-bengali text-[16px] font-bold text-ink">{featured.title.split("।")[0].split("|")[0].trim()}</p>
+                <p className="mt-1 truncate font-bengali text-[16px] font-bold text-ink">{featured.title.split("।")[0].split("|")[0].split(" - ")[0].trim()}</p>
               </div>
               <a href={brands[0].youtube} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm shrink-0">
                 YouTube
@@ -172,7 +172,7 @@ export function Videos() {
             <div className="mt-4 flex items-start gap-3">
               <span className="mt-1.5 size-2.5 shrink-0 rounded-full" style={{ background: brand.accent }} aria-hidden />
               <div className="min-w-0">
-                <p className="truncate font-bengali text-[16px] font-bold text-ink">{video!.title.split("।")[0].split("|")[0].trim()}</p>
+                <p className="truncate font-bengali text-[16px] font-bold text-ink">{video!.title.split("।")[0].split("|")[0].split(" - ")[0].trim()}</p>
                 <a href={brand.youtube} target="_blank" rel="noopener noreferrer" className="mt-0.5 block text-[14px] text-ink-muted hover:text-ink">
                   {brand.name} · {video!.views} views
                 </a>
