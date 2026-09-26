@@ -1,0 +1,170 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Taranga: light theme built on the logo's sky blue. Spectrum = four hard-edged solids, never a gradient. */
+:root {
+  --bg: #ffffff;
+  --surface: #f3f6f9;
+  --ink: #001020;
+  --ink-muted: #475467;
+  --line: #d8dee6;
+  --sky: #00a0e0;
+  --sky-ink: #0072b0;
+  --indigo: #302080;
+  --sp-r: #e53935;
+  --sp-y: #f5c400;
+  --sp-g: #2e9e44;
+  --sp-b: #1e6fe0;
+
+  --background: var(--bg);
+  --foreground: var(--ink);
+  --card: var(--bg);
+  --card-foreground: var(--ink);
+  --popover: var(--bg);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: #ffffff;
+  --secondary: var(--surface);
+  --secondary-foreground: var(--ink);
+  --muted: var(--surface);
+  --muted-foreground: var(--ink-muted);
+  --accent: var(--surface);
+  --accent-foreground: var(--ink);
+  --destructive: #d92d20;
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--sky-ink);
+  --radius: 1.25rem;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-line: var(--line);
+  --color-sky: var(--sky);
+  --color-sky-ink: var(--sky-ink);
+  --color-indigo: var(--indigo);
+  --color-sp-r: var(--sp-r);
+  --color-sp-y: var(--sp-y);
+  --color-sp-g: var(--sp-g);
+  --color-sp-b: var(--sp-b);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--line);
+  --color-input: var(--line);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-bricolage), var(--font-manrope), ui-sans-serif, sans-serif;
+  --font-bengali: var(--font-bengali), var(--font-manrope), sans-serif;
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+@layer base {
+  * {
+    @apply border-line outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: clip;
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--sky-ink);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--sky);
+    color: var(--ink);
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1240px] px-4 sm:px-6;
+  }
+  .label {
+    @apply text-[12px] font-semibold uppercase tracking-[0.08em] text-ink-muted;
+  }
+  .text-h1 {
+    @apply font-heading text-[clamp(40px,5.2vw,64px)] leading-[0.98] font-extrabold tracking-[-0.02em];
+  }
+  .text-h2 {
+    @apply font-heading text-[clamp(32px,3.4vw,44px)] leading-[1.05] font-extrabold tracking-[-0.02em];
+  }
+  .text-h3 {
+    @apply font-heading text-[clamp(22px,1.8vw,28px)] leading-[1.15] font-bold tracking-[-0.01em];
+  }
+  .card {
+    @apply rounded-[24px] border border-line bg-background;
+  }
+  .card-hover {
+    @apply transition-[transform,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-ink;
+  }
+  .btn,
+  .btn-primary,
+  .btn-ghost,
+  .btn-sky {
+    @apply inline-flex h-[52px] items-center justify-center gap-2 rounded-full px-6 text-[15px] font-semibold transition-[background-color,border-color,color,transform] duration-200 ease-out;
+  }
+  .btn-primary {
+    @apply bg-ink text-white hover:bg-indigo active:translate-y-px;
+  }
+  .btn-ghost {
+    @apply border border-line text-ink hover:border-ink;
+  }
+  .btn-sky {
+    @apply bg-sky text-ink hover:bg-[#0090cc];
+  }
+  .btn-sm {
+    @apply h-10 px-4 text-[14px];
+  }
+  .marquee-track {
+    animation: marquee 40s linear infinite;
+  }
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-track {
+    animation: none;
+  }
+}

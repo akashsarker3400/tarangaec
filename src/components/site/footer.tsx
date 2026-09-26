@@ -1,0 +1,63 @@
+import Link from "next/link";
+
+import { brands, nav, site, socials } from "@/data/site";
+import { SpectrumRule } from "./shared";
+
+export function Footer() {
+  return (
+    <footer className="mt-auto bg-indigo text-white">
+      <div className="container-x py-16">
+        <SpectrumRule className="w-full" height={4} />
+        <div className="mt-12 grid gap-10 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <p className="font-bengali text-[clamp(56px,7vw,96px)] leading-none font-bold">{site.bengali}</p>
+            <p className="mt-4 max-w-sm text-[15px] text-white/75">{site.description}</p>
+          </div>
+          <div className="md:col-span-2">
+            <p className="label mb-4 text-white/60">Pages</p>
+            <ul className="space-y-2.5 text-[15px] text-white/85">
+              {nav.map((n) => (
+                <li key={n.href}>
+                  <Link href={n.href} className="hover:text-white">
+                    {n.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="md:col-span-3">
+            <p className="label mb-4 text-white/60">Brands</p>
+            <ul className="space-y-2.5 text-[15px] text-white/85">
+              {brands.map((b) => (
+                <li key={b.slug}>
+                  <Link href={`/brands#${b.slug}`} className="hover:text-white">
+                    {b.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="md:col-span-2">
+            <p className="label mb-4 text-white/60">Contact</p>
+            <a href={`mailto:${site.email}`} className="text-[15px] text-white hover:underline">
+              {site.email}
+            </a>
+            <ul className="mt-4 space-y-2 text-[15px] text-white/85">
+              {socials.map((s) => (
+                <li key={s.label}>
+                  <a href={s.href} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="mt-12 flex flex-col gap-2 border-t border-white/15 pt-6 text-[13px] text-white/60 sm:flex-row sm:justify-between">
+          <span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span>
+          <span>{site.tagline}</span>
+        </div>
+      </div>
+    </footer>
+  );
+}
