@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Manrope, Noto_Sans_Bengali } from "next/font/google";
+import { Inter, Noto_Sans_Bengali, Source_Serif_4 } from "next/font/google";
 import { site } from "@/data/site";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import "./globals.css";
 
-const bricolage = Bricolage_Grotesque({ variable: "--font-bricolage", subsets: ["latin"], display: "swap" });
-const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"], display: "swap" });
+const serif = Source_Serif_4({ variable: "--font-serif", subsets: ["latin"], weight: ["500", "600"], display: "swap" });
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
 const bengali = Noto_Sans_Bengali({ variable: "--font-bengali", subsets: ["bengali"], weight: ["700"], display: "swap" });
 
 const title = `${site.name} — ${site.tagline}`;
@@ -30,6 +30,7 @@ const jsonLd = {
   url: site.domain,
   logo: `${site.domain}/brand/taranga.png`,
   email: site.email,
+  parentOrganization: { "@type": "Organization", name: "ANS Music", url: "https://ansmusic.io" },
   description: site.description,
   areaServed: "BD",
   brand: ["Taranga Music Centre", "Taranga Music", "Taranga Entertainment", "Bangla Entertainment", "Bangla Drama"].map((n) => ({ "@type": "Brand", name: n })),
@@ -37,7 +38,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${manrope.variable} ${bengali.variable}`}>
+    <html lang="en" className={`${serif.variable} ${inter.variable} ${bengali.variable}`}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>

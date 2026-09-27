@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { site, timeline } from "@/data/site";
 import { PageHead, Reveal, Section } from "@/components/site/shared";
 import { Stats } from "@/components/site/home";
@@ -12,15 +13,24 @@ export default function About() {
     <>
       <PageHead label="About" title="Two decades of music, from cassette to streaming." sub={site.description} />
       <Stats />
-      <Section label="Our story" tone="surface">
-        <div className="mt-10 grid gap-10 md:grid-cols-12">
+      <Section label="The founder" tone="surface">
+        <div className="mt-10 grid gap-8 md:grid-cols-12 md:gap-12">
           <Reveal className="md:col-span-5">
-            <h2 className="text-h2">We believe in bringing the world closer together through music.</h2>
+            <div className="overflow-hidden rounded-[12px] border border-line bg-white">
+              <Image src="/founder.jpg" alt="Subrata Kumar Deb at his desk, with Taranga's YouTube Creator Awards on the shelf behind him" width={1085} height={1400} className="h-auto w-full" sizes="(min-width: 768px) 40vw, 100vw" />
+            </div>
+            <p className="mt-4 text-[14px] text-ink-muted">
+              <span className="font-semibold text-ink">{site.founder}</span> · Founder, Taranga Electro Centre
+            </p>
           </Reveal>
-          <Reveal delay={0.05} className="space-y-5 text-[17px] text-ink-muted md:col-span-7">
-            <p>Taranga Electro Centre was started by Subrata Kumar Deb in the days of CDs and cassettes, before 2000. There was no online music then: Taranga recorded folk artists and released their songs on CD, one album at a time. That catalogue grew into one of the largest folk-music collections in Bangladesh, and the label into one of the oldest still running.</p>
-            <p>Over those years Taranga became an integral part of the entertainment business in rural Bangladesh. Today the group releases music, video and drama under five brands, reaching listeners on every major platform.</p>
-            <p>So, to all the music lovers who believe in the magic of music: come join us, and live the magic of music with Taranga.</p>
+          <Reveal delay={0.05} className="md:col-span-7">
+            <h2 className="text-h2">It started with one man and a shop full of cassettes.</h2>
+            <div className="mt-6 space-y-5 text-[17px] text-ink-muted">
+              <p>Before 2000, {site.founder} started Taranga Electro Centre in the age of cassettes and CDs. There was no online music, no streaming and no YouTube. A song reached a listener only if someone recorded it, pressed it and put it on a shop shelf — so that is what he did.</p>
+              <p>The early years were a struggle. Building a label from nothing meant finding artists nobody had recorded, paying for studio time and pressing before a single copy was sold, and earning the trust of shopkeepers one town at a time. He kept going.</p>
+              <p>It paid off. In the cassette and CD era Taranga became one of the most successful music companies in the country and an integral part of entertainment in rural Bangladesh. Its folk recordings — Baul, Bhatiali, Bhawaiya and more — sold across the country and grew into one of the largest folk catalogues in Bangladesh.</p>
+              <p>Music moved online, and after 2016 Taranga moved with it. The same catalogue now lives on six YouTube channels; the YouTube Creator Awards on the shelf behind him mark the milestones. Two decades on, his belief is unchanged: music brings the world closer together.</p>
+            </div>
           </Reveal>
         </div>
       </Section>
@@ -28,7 +38,7 @@ export default function About() {
         <ol className="mt-12 grid gap-4 md:grid-cols-4">
           {timeline.map((t, i) => (
             <Reveal key={t.when} delay={i * 0.06} className="card flex h-full flex-col p-6">
-              <span className="inline-flex w-fit rounded-full bg-sky px-3 py-1 text-[12px] font-semibold text-ink">{t.when}</span>
+              <span className="label">{t.when}</span>
               <h3 className="text-h3 mt-5">{t.title}</h3>
               <p className="mt-2 text-[15px] text-ink-muted">{t.text}</p>
             </Reveal>

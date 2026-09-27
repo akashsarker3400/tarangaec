@@ -42,8 +42,8 @@ export default function Artists() {
               ))}
             </ul>
           </Reveal>
-          <Reveal delay={0.06} className="rounded-[24px] bg-sky p-7 text-ink md:col-span-5 md:p-9">
-            <p className="label text-ink/70">A&amp;R · singers, music directors, lyricists</p>
+          <Reveal delay={0.06} className="rounded-[12px] border border-ink bg-surface p-7 text-ink md:col-span-5 md:p-9">
+            <p className="label">A&amp;R · singers, music directors, lyricists</p>
             <a href={`mailto:${artists.email}?subject=Music%20submission`} className="mt-2 block break-all font-heading text-[clamp(22px,2.2vw,30px)] font-extrabold tracking-[-0.02em] hover:underline">
               {artists.email}
             </a>

@@ -8,7 +8,6 @@ import { Menu, X } from "lucide-react";
 
 import { nav, site } from "@/data/site";
 import { cn } from "@/lib/utils";
-import { SpectrumRule } from "./shared";
 
 export function Header() {
   const pathname = usePathname();
@@ -34,10 +33,9 @@ export function Header() {
       <header className={cn("fixed inset-x-0 top-0 z-50 h-[72px] border-b bg-background transition-colors", scrolled ? "border-line" : "border-transparent")}>
         <div className="container-x flex h-full items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-3" aria-label={site.name}>
-            <Image src="/brand/taranga.png" alt="" width={44} height={56} priority className="h-10 w-auto rounded-md" />
-            <span className="hidden font-heading text-[17px] leading-tight font-bold tracking-[-0.01em] sm:block">
-              Taranga
-              <span className="block text-[11px] font-semibold tracking-[0.08em] text-ink-muted uppercase">Electro Centre</span>
+            <Image src="/brand/taranga.png" alt="" width={94} height={120} priority className="h-12 w-auto" />
+            <span className="hidden font-heading text-[16px] leading-none font-bold tracking-[-0.01em] text-ink sm:block">
+              Taranga <span className="text-ink-muted">Electro Centre</span>
             </span>
           </Link>
 
@@ -65,7 +63,6 @@ export function Header() {
       </header>
 
       <div id="mobile-menu" aria-hidden={!open} className={cn("fixed inset-0 z-40 flex flex-col bg-background px-5 pt-24 pb-8 transition-opacity duration-300 lg:hidden", open ? "opacity-100" : "pointer-events-none opacity-0")}>
-        <SpectrumRule className="w-full" />
         <nav aria-label="Mobile" className="mt-6 flex flex-col">
           {nav.map((n, i) => (
             <Link key={n.href} href={n.href} tabIndex={open ? 0 : -1} onClick={() => setOpen(false)} className="flex items-baseline gap-4 border-b border-line py-4 font-heading text-[32px] font-extrabold tracking-[-0.02em]">
