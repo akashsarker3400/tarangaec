@@ -7,10 +7,11 @@ import { Faq } from "@/components/site/faq";
 import { faq } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "About — founded by Subrata Kumar Deb",
+  title: "About: founded by Subrata Kumar Deb",
   description: `${site.name} was started by ${site.founder} in the cassette and CD era, before 2000. One of the oldest music labels in Bangladesh with one of the largest folk catalogues.`,
   alternates: { canonical: "/about" },
   openGraph: { title: `About ${site.name}`, description: site.description, url: "/about", images: ["/founder.jpg"] },
+  twitter: { title: `About ${site.name}`, description: site.description, images: ["/founder.jpg"] },
 };
 
 const faqJsonLd = {
@@ -23,7 +24,7 @@ export default function About() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      <PageHead label="About" title="Two decades of music, from cassette to streaming." sub={site.description} />
+      <PageHead label="About" title="Since the 1990s: from cassette to streaming." sub={site.description} />
       <Stats />
       <Section label="The founder" tone="surface">
         <div className="mt-10 grid gap-8 md:grid-cols-12 md:gap-12">
@@ -38,10 +39,10 @@ export default function About() {
           <Reveal delay={0.05} className="md:col-span-7">
             <h2 className="text-h2">It started with one man and a shop full of cassettes.</h2>
             <div className="mt-6 space-y-5 text-[17px] text-ink-muted">
-              <p>Before 2000, {site.founder} started Taranga Electro Centre in the age of cassettes and CDs. There was no online music, no streaming and no YouTube. A song reached a listener only if someone recorded it, pressed it and put it on a shop shelf — so that is what he did.</p>
+              <p>Before 2000, {site.founder} started Taranga Electro Centre in the age of cassettes and CDs. There was no online music, no streaming and no YouTube. A song reached a listener only if someone recorded it, pressed it and put it on a shop shelf, so that is what he did.</p>
               <p>The early years were a struggle. Building a label from nothing meant finding artists nobody had recorded, paying for studio time and pressing before a single copy was sold, and earning the trust of shopkeepers one town at a time. He kept going.</p>
-              <p>It paid off. In the cassette and CD era Taranga became one of the most successful music companies in the country and an integral part of entertainment in rural Bangladesh. Its folk recordings — Baul, Bhatiali, Bhawaiya and more — sold across the country and grew into one of the largest folk catalogues in Bangladesh.</p>
-              <p>Music moved online, and after 2016 Taranga moved with it. The same catalogue now lives on six YouTube channels; the YouTube Creator Awards on the shelf behind him mark the milestones. Two decades on, his belief is unchanged: music brings the world closer together.</p>
+              <p>It paid off. In the cassette and CD era Taranga became one of the most successful music companies in the country and an integral part of entertainment in rural Bangladesh. Its folk recordings, Baul, Bhatiali, Bhawaiya and more, sold across the country and grew into one of the largest folk catalogues in Bangladesh.</p>
+              <p>Music moved online, and after 2016 Taranga moved with it. The same catalogue now lives on six YouTube channels; the YouTube Creator Awards on the shelf behind him mark the milestones. More than 25 years on, his belief is unchanged: music brings the world closer together.</p>
             </div>
           </Reveal>
         </div>

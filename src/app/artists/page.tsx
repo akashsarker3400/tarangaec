@@ -5,10 +5,11 @@ import { ArrowUpRight, PageHead, Reveal, Section } from "@/components/site/share
 import { Faq } from "@/components/site/faq";
 
 export const metadata: Metadata = {
-  title: "Submit your music — release with Taranga",
+  title: "Submit your music to Taranga",
   description: "Singers, music directors and lyricists: send your songs to Taranga Electro Centre. We listen to every submission and release under a Taranga channel.",
   alternates: { canonical: "/artists" },
-  openGraph: { title: "Release your music with Taranga", url: "/artists" },
+  openGraph: { title: "Release your music with Taranga", url: "/artists", images: ["/og.jpg"] },
+  twitter: { title: "Release your music with Taranga", images: ["/og.jpg"] },
 };
 
 export default function Artists() {
@@ -59,7 +60,7 @@ export default function Artists() {
 
       <Section label="FAQ" title="Before you send." tone="surface" className="pb-20 md:pb-28">
         <div className="mt-10">
-          <Faq items={faq} />
+          <Faq items={faq.filter((f) => /submit|only for folk|listen/i.test(f.q))} />
         </div>
       </Section>
     </>

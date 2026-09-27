@@ -1,4 +1,4 @@
-// All site content lives here. Only facts from the brand brief — no invented names, numbers or awards.
+// All site content lives here. Only facts from the brand brief: no invented names, numbers or awards.
 
 export const site = {
   name: "Taranga Electro Centre",
@@ -7,7 +7,7 @@ export const site = {
   domain: "https://tarangaec.com",
   tagline: "Live the magic of music with TARANGA.",
   description:
-    "Taranga Electro Centre is one of the oldest music labels in Bangladesh, with one of the largest folk-music catalogues in the country. Two decades in the music industry, from the cassette era to streaming.",
+    "Taranga Electro Centre is one of the oldest music labels in Bangladesh, with one of the largest folk-music catalogues in the country. In music since the 1990s, from the cassette era to streaming.",
   email: "contact@tarangaec.com",
   founder: "Subrata Kumar Deb",
 };
@@ -22,14 +22,14 @@ export const nav = [
   { label: "About", href: "/about" },
   { label: "Music", href: "/music" },
   { label: "Channels", href: "/channels" },
-  { label: "Artists", href: "/artists" },
+  { label: "For artists", href: "/artists" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const hero = {
   kicker: "Music label · since the cassette era",
   title: "One of the oldest music labels in Bangladesh.",
-  lead: "Taranga Electro Centre has been part of the music industry for two decades — from cassettes and CDs to every streaming platform — and holds one of the largest folk-music catalogues in the country. We believe in bringing the world closer together through music.",
+  lead: "Taranga Electro Centre has been in music since the 1990s, from cassettes and CDs to YouTube and streaming, and holds one of the largest folk-music catalogues in the country. We believe in bringing the world closer together through music.",
   primary: { label: "Explore the catalogue", href: "/music" },
   secondary: { label: "Submit your music", href: "/artists" },
 };
@@ -39,7 +39,7 @@ export const stats = [
   { text: "7.8M+", label: "YouTube subscribers" },
   { text: "2.6B+", label: "Video views" },
   { text: "3,600+", label: "Videos published" },
-  { value: 20, suffix: "+", label: "Years in music" },
+  { text: "25+", label: "Years in music" },
 ];
 
 export const whatWeDo = {
@@ -49,7 +49,7 @@ export const whatWeDo = {
     { title: "Folk music", text: "One of the largest folk catalogues in Bangladesh: songs, artists and traditions from every region, preserved and released." },
     { title: "Music releases", text: "New singles and albums released to streaming platforms and video channels under the Taranga labels." },
     { title: "Video & drama", text: "Music videos, drama and entertainment content produced and published on Bangla Drama and the entertainment channels." },
-    { title: "Artist partnerships", text: "Working with artists and composers on releases, rights and reach — from first recording to global platforms." },
+    { title: "Artist partnerships", text: "Working with artists and composers on releases, rights and reach, from first recording to global platforms." },
   ],
 };
 
@@ -78,7 +78,7 @@ export const timeline = [
   { when: "1990s", title: "The cassette era", text: "Subrata Kumar Deb starts Taranga Electro Centre in the days of cassettes and CDs. There was no online music then; Taranga released CDs and built a folk catalogue from the ground up." },
   { when: "2000s", title: "Rural Bangladesh", text: "Taranga becomes an integral part of the entertainment business in rural Bangladesh." },
   { when: "2016 →", title: "Going digital", text: "After 2016 Taranga moves online. The catalogue goes to YouTube and streaming, and new channels follow for music, entertainment and drama." },
-  { when: "Today", title: "Two decades on", text: "One of the oldest labels in Bangladesh with one of its largest folk catalogues, released to the world across six Taranga YouTube channels." },
+  { when: "Today", title: "More than 25 years on", text: "One of the oldest labels in Bangladesh with one of its largest folk catalogues, released to the world across six Taranga YouTube channels." },
 ];
 
 export const artists = {
@@ -94,11 +94,11 @@ export const artists = {
 };
 
 export const faq = [
-  { q: "What kind of music does Taranga release?", a: "Folk first — Baul, Bhatiali, Bhawaiya, Lalon and regional traditions — alongside modern, film and devotional music, plus drama and entertainment video." },
+  { q: "What kind of music does Taranga release?", a: "Folk first: Baul, Bhatiali, Bhawaiya, Lalon and regional traditions, alongside modern, film and devotional music, plus drama and entertainment video." },
   { q: "How do I submit my music?", a: "Email us links to your songs and a short note. We listen to everything and reply with next steps." },
   { q: "Where can I listen to Taranga releases?", a: "On the six Taranga YouTube channels and the major streaming platforms. The Music and Channels pages link to them." },
   { q: "Is Taranga only for folk artists?", a: "No. Folk is our heritage and our largest catalogue, but we release modern, film and devotional music too." },
-  { q: "How long has Taranga been around?", a: "Since the cassette era, before 2000 — Subrata Kumar Deb started the label when music was released on CD and there was no online distribution. More than two decades later, it is one of the oldest labels in Bangladesh." },
+  { q: "How long has Taranga been around?", a: "Since the cassette era, before 2000. Subrata Kumar Deb started the label when music was released on CD and there was no online distribution. More than 25 years later, it is one of the oldest labels in Bangladesh." },
 ];
 
 export const socials = [

@@ -9,19 +9,19 @@ const serif = Source_Serif_4({ variable: "--font-serif", subsets: ["latin"], wei
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
 const bengali = Noto_Sans_Bengali({ variable: "--font-bengali", subsets: ["bengali"], weight: ["700"], display: "swap" });
 
-const title = `${site.name} — ${site.tagline}`;
+const title = `${site.name}: ${site.tagline}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
   title: { default: title, template: `%s · ${site.name}` },
   description: site.description,
   applicationName: site.name,
-  keywords: ["Taranga Electro Centre", "Taranga", "তরঙ্গ", "Bangla folk music", "Bangladeshi music label", "Baul", "Bhatiali", "Bhawaiya", "Lalon", "Bangla gaan", "Sharif Uddin", "Emon Khan", "Taranga Music Centre", "Bangla Drama", "Bangla Entertainment", "music label Bangladesh", "folk music Bangladesh"],
   category: "music",
   creator: site.name,
   publisher: "ANS Music",
   alternates: { canonical: "/" },
   formatDetection: { email: false, telephone: false },
+  manifest: "/manifest.webmanifest",
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
   openGraph: { type: "website", url: site.domain, siteName: site.name, title, description: site.description, images: [{ url: "/og.jpg", width: 1200, height: 630, alt: title }] },
   twitter: { card: "summary_large_image", title, description: site.description, images: ["/og.jpg"] },
@@ -41,7 +41,6 @@ const jsonLd = {
       email: site.email,
       description: site.description,
       slogan: site.tagline,
-      foundingDate: "1990s",
       founder: { "@id": `${site.domain}/about#founder` },
       parentOrganization: { "@type": "Organization", name: "ANS Music", url: "https://ansmusic.io" },
       areaServed: "BD",
@@ -76,6 +75,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${serif.variable} ${inter.variable} ${bengali.variable}`}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <link rel="preconnect" href="https://i.ytimg.com" />
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
       </head>
       <body className="flex min-h-screen flex-col">
         <a href="#main" className="sr-only z-[200] rounded-full bg-ink px-4 py-2 font-semibold text-white focus:not-sr-only focus:fixed focus:top-4 focus:left-4">
