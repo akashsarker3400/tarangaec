@@ -7,9 +7,10 @@ import { ArrowUpRight, PageHead, Reveal, Section } from "@/components/site/share
 
 export const metadata: Metadata = {
   title: "Six YouTube channels",
-  description: "The six Taranga YouTube channels — Taranga Electro Centre, Taranga Music Centre, Taranga Music, Taranga Entertainment, Bangla Entertainment and Bangla Drama — 7.8M+ subscribers, 2.6B+ views.",
+  description: "The six Taranga YouTube channels: Taranga Electro Centre, Taranga Music Centre, Taranga Music, Taranga Entertainment, Bangla Entertainment and Bangla Drama. 7.8M+ subscribers, 2.6B+ views.",
   alternates: { canonical: "/channels" },
-  openGraph: { title: "Taranga YouTube channels", url: "/channels" },
+  openGraph: { title: "Taranga YouTube channels", url: "/channels", images: ["/og.jpg"] },
+  twitter: { title: "Taranga YouTube channels", images: ["/og.jpg"] },
 };
 
 const channelsJsonLd = {
@@ -53,7 +54,7 @@ export default function Channels() {
                   {videos[b.slug].slice(0, 3).map((v) => (
                     <div key={v.id}>
                       <LiteYouTube video={v} className="rounded-[10px]" />
-                      <p className="mt-2 truncate font-bengali text-[14px] font-bold text-ink">{v.title.split("।")[0].split("|")[0].split(" - ")[0].trim()}</p>
+                      <p lang="bn" className="mt-2 truncate font-bengali text-[14px] font-bold text-ink">{v.title.split("।")[0].split("|")[0].split(" - ")[0].trim()}</p>
                       <p className="text-[12px] text-ink-muted">{v.views} views</p>
                     </div>
                   ))}

@@ -4,15 +4,16 @@ import { ArrowUpRight, CoverTile, PageHead, Reveal, Section } from "@/components
 
 export const metadata: Metadata = {
   title: "Bangla folk music catalogue",
-  description: "The Taranga catalogue: one of the largest Bangla folk-music collections in Bangladesh — Baul, Bhatiali, Bhawaiya and Lalon — plus modern, film and devotional songs.",
+  description: "The Taranga catalogue: one of the largest Bangla folk-music collections in Bangladesh, with Baul, Bhatiali, Bhawaiya and Lalon, plus modern, film and devotional songs.",
   alternates: { canonical: "/music" },
-  openGraph: { title: "Taranga music catalogue", url: "/music" },
+  openGraph: { title: "Taranga music catalogue", url: "/music", images: ["/og.jpg"] },
+  twitter: { title: "Taranga music catalogue", images: ["/og.jpg"] },
 };
 
 export default function Music() {
   return (
     <>
-      <PageHead label="Catalogue" title="One of the largest folk-music collections in Bangladesh." sub="Songs, artists and traditions from every region — preserved and released to the world. Browse by genre, then listen on your platform." />
+      <PageHead label="Catalogue" title="One of the largest folk-music collections in Bangladesh." sub="Songs, artists and traditions from every region, preserved and released to the world. Browse by genre, then listen on YouTube." />
       <div className="container-x">
         <Reveal>
           <ul className="flex flex-wrap gap-2">

@@ -7,13 +7,14 @@ export const metadata: Metadata = {
   title: "Contact",
   description: `Contact ${site.name}: A&R (ar@tarangaec.com), publishing, TV and sync (contact@tarangaec.com), legal (legal@ansmusic.io).`,
   alternates: { canonical: "/contact" },
-  openGraph: { title: `Contact ${site.name}`, url: "/contact" },
+  openGraph: { title: `Contact ${site.name}`, url: "/contact", images: ["/og.jpg"] },
+  twitter: { title: `Contact ${site.name}`, images: ["/og.jpg"] },
 };
 
 export default function Contact() {
   return (
     <>
-      <PageHead label="Contact" title="Please contact the following for your requirements." sub="Three inboxes, one team. Pick the one that fits and we'll reply within a few business days." />
+      <PageHead label="Contact" title="Get in touch." sub="Three inboxes, one team. Pick the one that fits your requirement and we will reply within a few business days." />
       <div className="container-x grid gap-4 pb-20 md:grid-cols-3 md:pb-28">
         {contacts.map((c, i) => (
           <Reveal key={c.email} delay={i * 0.06} className={cn("flex flex-col rounded-[12px] p-8 md:p-9", i === 0 ? "border border-ink bg-surface text-ink" : "card")}>

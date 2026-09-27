@@ -4,10 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 
-import { CountUp } from "@/components/unlumen-ui/count-up";
 import { HoverExpand } from "@/components/unlumen-ui/hover-expand";
 import { MagneticButton } from "@/components/unlumen-ui/magnetic-button";
-import { TextReveal } from "@/components/unlumen-ui/text-reveal";
 import { brands, genres, hero, stats, whatWeDo } from "@/data/site";
 import { featured, picks } from "@/data/videos";
 import { LiteYouTube } from "./youtube";
@@ -25,19 +23,13 @@ export function Hero() {
     <section className="pt-10 pb-16 md:pt-16 md:pb-24">
       <div className="container-x grid items-center gap-10 lg:grid-cols-12">
         <div className="lg:col-span-7">
-          <Reveal>
-            <div className="flex items-center gap-3">
-              <Rule />
-              <span className="label">{hero.kicker}</span>
-            </div>
-          </Reveal>
-          <h1 className="text-h1 mt-8 max-w-[15ch]">
-            <TextReveal as="span" text={hero.title} staggerDelay={0.04} duration={0.45} className="leading-[inherit]" />
-          </h1>
-          <Reveal delay={0.3}>
-            <p className="mt-6 max-w-[54ch] text-[clamp(17px,1.4vw,20px)] leading-[1.55] text-ink-muted">{hero.lead}</p>
-          </Reveal>
-          <Reveal delay={0.4}>
+          <div className="flex items-center gap-3">
+            <Rule />
+            <span className="label">{hero.kicker}</span>
+          </div>
+          <h1 className="text-h1 mt-8 max-w-[15ch]">{hero.title}</h1>
+          <p className="mt-6 max-w-[54ch] text-[clamp(17px,1.4vw,20px)] leading-[1.55] text-ink-muted">{hero.lead}</p>
+          <div>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <MagneticButton href={hero.primary.href} radius={24} strength={0.3} className="btn-primary">
                 {hero.primary.label}
@@ -47,23 +39,23 @@ export function Hero() {
                 {hero.secondary.label}
               </Link>
             </div>
-          </Reveal>
+          </div>
         </div>
 
         <motion.div style={reduce ? undefined : { y }} className="lg:col-span-5">
-          <Reveal delay={0.15}>
+          <div>
             <LiteYouTube video={featured} priority className="rounded-[12px]" />
             <div className="mt-4 flex items-start justify-between gap-4">
               <div className="min-w-0">
                 <p className="label">Most watched · {featured.views} views</p>
-                <p className="mt-1 truncate font-bengali text-[16px] font-bold text-ink">{shortTitle(featured.title)}</p>
+                <p lang="bn" className="mt-1 truncate font-bengali text-[16px] font-bold text-ink">{shortTitle(featured.title)}</p>
               </div>
               <a href={brands[0].youtube} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm shrink-0">
                 YouTube
                 <ArrowRight className="size-3.5 -rotate-45" />
               </a>
             </div>
-          </Reveal>
+          </div>
         </motion.div>
       </div>
     </section>
@@ -79,19 +71,13 @@ export function Stats() {
         {stats.map((s, i) => (
           <Reveal key={s.label} delay={i * 0.05} className="px-2 md:border-l md:border-line md:px-8 md:first:border-l-0 md:first:pl-0">
             <div className="font-heading text-[clamp(40px,4.2vw,60px)] leading-none font-medium tracking-[-0.01em] tabular-nums">
-              {"value" in s && s.value !== undefined ? (
-                <>
-                  <CountUp to={s.value} duration={1.2} digitEffect="none" />
-                  {s.suffix}
-                </>
-              ) : (
-                s.text
-              )}
+              {s.text}
             </div>
             <p className="mt-3 text-[14px] leading-snug text-ink-muted">{s.label}</p>
           </Reveal>
         ))}
       </div>
+      <p className="mt-3 text-[12px] text-ink-muted">YouTube figures are totals across the six channels, as of September 2026.</p>
     </section>
   );
 }
@@ -123,7 +109,7 @@ export function Catalogue() {
       id="catalogue"
       label="Catalogue"
       title="Folk first. Then everything else."
-      sub="Regional traditions preserved and released — from one of the largest folk collections in Bangladesh to modern, film and devotional music."
+      sub="Regional traditions preserved and released: from one of the largest folk collections in Bangladesh to modern, film and devotional music."
       action={
         <Link href="/music" className="group inline-flex items-center gap-1.5 text-[15px] font-semibold">
           Browse the catalogue
@@ -163,7 +149,7 @@ export function Videos() {
           <Reveal key={video.id} delay={Math.min(i * 0.05, 0.25)}>
             <LiteYouTube video={video} />
             <div className="mt-4 min-w-0">
-              <p className="truncate font-bengali text-[16px] font-bold text-ink">{video.title}</p>
+              <p lang="bn" className="truncate font-bengali text-[16px] font-bold text-ink">{video.title}</p>
               <p className="mt-0.5 text-[14px] text-ink-muted">
                 {video.by} · {video.views} views
               </p>

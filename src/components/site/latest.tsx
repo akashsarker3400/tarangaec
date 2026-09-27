@@ -29,7 +29,12 @@ function decode(s: string) {
 }
 
 export function shortTitle(t: string) {
-  return t.split("।")[0].split("|")[0].split(" - ")[0].trim();
+  return t
+    .split("।")[0]
+    .split("|")[0]
+    .split(" - ")[0]
+    .replace(/[\p{Extended_Pictographic}\uFE0F]/gu, "")
+    .trim();
 }
 
 export async function LatestFromTmc() {
@@ -52,7 +57,7 @@ export async function LatestFromTmc() {
         {items.map((v, i) => (
           <Reveal key={v.id} delay={Math.min(i * 0.05, 0.2)}>
             <LiteYouTube video={v} className="rounded-[10px]" />
-            <p className="mt-3 line-clamp-2 font-bengali text-[15px] leading-snug font-bold text-ink">{shortTitle(v.title)}</p>
+            <p lang="bn" className="mt-3 line-clamp-2 font-bengali text-[15px] leading-snug font-bold text-ink">{shortTitle(v.title)}</p>
           </Reveal>
         ))}
       </div>

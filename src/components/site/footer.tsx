@@ -17,7 +17,7 @@ export function Footer() {
             <ul className="space-y-2.5 text-[15px] text-white/85">
               {nav.map((n) => (
                 <li key={n.href}>
-                  <Link href={n.href} className="hover:text-white">
+                  <Link href={n.href} className="inline-block py-0.5 hover:text-white">
                     {n.label}
                   </Link>
                 </li>
@@ -29,10 +29,10 @@ export function Footer() {
             <ul className="space-y-2.5 text-[15px] text-white/85">
               {brands.map((b) => (
                 <li key={b.slug} className="flex items-center gap-2">
-                  <Link href={`/channels#${b.slug}`} className="hover:text-white">
+                  <Link href={`/channels#${b.slug}`} className="inline-block py-0.5 hover:text-white">
                     {b.name}
                   </Link>
-                  <a href={b.youtube} target="_blank" rel="noopener noreferrer" aria-label={`${b.name} on YouTube`} className="text-[12px] text-white/50 hover:text-white">
+                  <a href={b.youtube} target="_blank" rel="noopener noreferrer" aria-label={`${b.name} on YouTube`} className="inline-flex min-h-6 items-center px-1 text-[12px] text-white/50 hover:text-white">
                     YT ↗
                   </a>
                 </li>
@@ -42,7 +42,7 @@ export function Footer() {
             <ul className="space-y-2.5 text-[15px] text-white/85">
               {facebookPages.map((f) => (
                 <li key={f.href}>
-                  <a href={f.href} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                  <a href={f.href} target="_blank" rel="noopener noreferrer" className="inline-block py-0.5 hover:text-white">
                     {f.name}
                   </a>
                 </li>
@@ -69,7 +69,10 @@ export function Footer() {
             <a href="https://ansmusic.io" target="_blank" rel="noopener noreferrer" className="text-white/85 underline-offset-2 hover:text-white hover:underline">
               ANS Music
             </a>{" "}
-            company. All rights reserved.
+            company. All rights reserved.{" "}
+            <Link href="/privacy" className="inline-block py-1 text-white/85 hover:text-white hover:underline">
+              Privacy
+            </Link>
           </span>
           <span>{site.tagline}</span>
         </div>

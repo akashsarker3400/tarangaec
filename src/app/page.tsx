@@ -13,7 +13,7 @@ const videosJsonLd = {
     item: {
       "@type": "VideoObject",
       name: v.title,
-      description: `${v.title} — ${v.by}. Released by ${site.name}.`,
+      description: `${v.title} by ${v.by}. Released by ${site.name}.`,
       thumbnailUrl: `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`,
       embedUrl: `https://www.youtube-nocookie.com/embed/${v.id}`,
       contentUrl: `https://www.youtube.com/watch?v=${v.id}`,
