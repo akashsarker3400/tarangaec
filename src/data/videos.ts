@@ -42,3 +42,13 @@ export const videos: Record<string, Video[]> = {
 };
 
 export const featured: Video = videos["taranga-electro-centre"][0];
+
+/** Hand-picked top songs for the home page. `by` is the channel or artist shown under the title. */
+export const picks: (Video & { by: string })[] = [
+  { id: "bLdkI3qa7mc", title: "আমার বন্ধু ময়ূরী", views: "24M", by: "Sharif Uddin · Taranga Electro Centre" },
+  { id: "p736sx5GmqE", title: "মৌসুমি একা একা", views: "20M", by: "Sharif Uddin · Taranga Electro Centre" },
+  { id: "W0OqWJhD8Wo", title: "কেমন কেমন লাগে", views: "10M", by: "Emon Khan & Sathi Khan" },
+  { id: "J9c97ttOljI", title: "লাল গোলাপি", views: "39M", by: "Sharif Uddin · Taranga Electro Centre" },
+  { id: "h8GWWrXeSaI", title: "ওগো পরানের প্রিয়া", views: "33M", by: "Sharif Uddin · Taranga Electro Centre" },
+  { id: "5oHoGb2M4MA", title: "রূপা তুমি ভালো থেকো", views: "7.4M", by: "Emon Khan · Taranga Music Centre" },
+];

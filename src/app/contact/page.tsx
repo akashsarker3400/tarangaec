@@ -11,7 +11,7 @@ export default function Contact() {
       <PageHead label="Contact" title="Please contact the following for your requirements." sub="Three inboxes, one team. Pick the one that fits and we'll reply within a few business days." />
       <div className="container-x grid gap-4 pb-20 md:grid-cols-3 md:pb-28">
         {contacts.map((c, i) => (
-          <Reveal key={c.email} delay={i * 0.06} className={cn("flex flex-col rounded-[16px] p-8 md:p-9", i === 0 ? "border border-ink bg-surface text-ink" : "card")}>
+          <Reveal key={c.email} delay={i * 0.06} className={cn("flex flex-col rounded-[12px] p-8 md:p-9", i === 0 ? "border border-ink bg-surface text-ink" : "card")}>
             <span className={cn("block h-px w-8", i === 0 ? "bg-ink" : "bg-ink")} aria-hidden />
             <p className={cn("label mt-6", i === 0 && "text-ink/70")}>{c.label}</p>
             <h2 className="text-h3 mt-2">{c.who}</h2>

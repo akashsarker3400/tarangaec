@@ -16,7 +16,7 @@ export default function About() {
       <Section label="The founder" tone="surface">
         <div className="mt-10 grid gap-8 md:grid-cols-12 md:gap-12">
           <Reveal className="md:col-span-5">
-            <div className="overflow-hidden rounded-[24px] border border-line bg-white">
+            <div className="overflow-hidden rounded-[12px] border border-line bg-white">
               <Image src="/founder.jpg" alt="Subrata Kumar Deb at his desk, with Taranga's YouTube Creator Awards on the shelf behind him" width={1085} height={1400} className="h-auto w-full" sizes="(min-width: 768px) 40vw, 100vw" />
             </div>
             <p className="mt-4 text-[14px] text-ink-muted">

@@ -37,7 +37,7 @@
   --border: var(--line);
   --input: var(--line);
   --ring: var(--sky-ink);
-  --radius: 1rem;
+  --radius: 0.75rem;
 }
 
 @theme inline {
@@ -71,7 +71,7 @@
   --color-input: var(--line);
   --color-ring: var(--ring);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-heading: var(--font-serif), Georgia, "Times New Roman", serif;
   --font-bengali: var(--font-bengali), var(--font-inter), sans-serif;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
@@ -114,16 +114,16 @@
     @apply text-[12px] font-medium uppercase tracking-[0.12em] text-ink-muted;
   }
   .text-h1 {
-    @apply font-heading text-[clamp(40px,5.2vw,68px)] leading-[1.02] font-medium tracking-[-0.015em];
+    @apply font-heading text-[clamp(40px,5vw,64px)] leading-[1.05] font-semibold tracking-[-0.01em];
   }
   .text-h2 {
-    @apply font-heading text-[clamp(30px,3.2vw,42px)] leading-[1.1] font-medium tracking-[-0.01em];
+    @apply font-heading text-[clamp(30px,3.1vw,40px)] leading-[1.12] font-semibold tracking-[-0.005em];
   }
   .text-h3 {
-    @apply font-heading text-[clamp(21px,1.7vw,26px)] leading-[1.2] font-medium;
+    @apply font-heading text-[clamp(21px,1.7vw,25px)] leading-[1.25] font-semibold;
   }
   .card {
-    @apply rounded-[16px] border border-line bg-background;
+    @apply rounded-[12px] border border-line bg-background;
   }
   .card-hover {
     @apply transition-[transform,border-color] duration-300 ease-out hover:-translate-y-0.5 hover:border-ink;
@@ -132,7 +132,7 @@
   .btn-primary,
   .btn-ghost,
   .btn-sky {
-    @apply inline-flex h-[50px] items-center justify-center gap-2 rounded-full px-6 text-[15px] font-medium transition-[background-color,border-color,color,transform] duration-200 ease-out;
+    @apply inline-flex h-[48px] items-center justify-center gap-2 rounded-[10px] px-6 text-[15px] font-medium transition-[background-color,border-color,color,transform] duration-200 ease-out;
   }
   .btn-primary {
     @apply bg-ink text-white hover:bg-sky-ink active:translate-y-px;

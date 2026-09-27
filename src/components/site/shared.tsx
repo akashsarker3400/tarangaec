@@ -76,7 +76,7 @@ export function PageHead({ label, title, sub, children }: { label: string; title
 /** Typographic genre tile: serif title on paper, hairline border. No stock imagery. */
 export function CoverTile({ title, sub, className, large = false, index }: { title: string; sub?: string; className?: string; large?: boolean; index?: number }) {
   return (
-    <div className={cn("relative flex aspect-square flex-col justify-between overflow-hidden rounded-[16px] border border-line bg-background p-5 text-ink", className)}>
+    <div className={cn("relative flex aspect-square flex-col justify-between overflow-hidden rounded-[12px] border border-line bg-background p-5 text-ink", className)}>
       <span className="label">{index !== undefined ? String(index + 1).padStart(2, "0") : "তরঙ্গ"}</span>
       <div>
         <p className={cn("font-heading leading-[1.05] font-medium text-balance", large ? "text-[clamp(32px,3.4vw,48px)]" : "text-[24px]")}>{title}</p>

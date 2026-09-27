@@ -9,7 +9,7 @@ import { HoverExpand } from "@/components/unlumen-ui/hover-expand";
 import { MagneticButton } from "@/components/unlumen-ui/magnetic-button";
 import { TextReveal } from "@/components/unlumen-ui/text-reveal";
 import { brands, genres, hero, stats, whatWeDo } from "@/data/site";
-import { featured, videos } from "@/data/videos";
+import { featured, picks } from "@/data/videos";
 import { LiteYouTube } from "./youtube";
 import { ArrowRight, CoverTile, Reveal, Section, Rule } from "./shared";
 import { shortTitle } from "./latest";
@@ -52,7 +52,7 @@ export function Hero() {
 
         <motion.div style={reduce ? undefined : { y }} className="lg:col-span-5">
           <Reveal delay={0.15}>
-            <LiteYouTube video={featured} priority className="rounded-[24px]" />
+            <LiteYouTube video={featured} priority className="rounded-[12px]" />
             <div className="mt-4 flex items-start justify-between gap-4">
               <div className="min-w-0">
                 <p className="label">Most watched · {featured.views} views</p>
@@ -156,21 +156,17 @@ export function Catalogue() {
 /* ---------------- Top videos ---------------- */
 
 export function Videos() {
-  const picks = ["taranga-electro-centre", "taranga-music-centre"].flatMap((slug) => {
-    const brand = brands.find((b) => b.slug === slug)!;
-    return (videos[slug] ?? []).slice(0, 3).map((video) => ({ brand, video }));
-  });
   return (
-    <Section id="videos" label="Most watched" title="The songs people keep coming back to." sub="The most-played music videos from Taranga Electro Centre and Taranga Music Centre. Press play; it streams from YouTube.">
+    <Section id="videos" label="Top songs" title="The songs people keep coming back to." sub="Taranga's most-played songs. Press play; it streams from YouTube.">
       <div className="mt-12 grid gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-        {picks.map(({ brand, video }, i) => (
+        {picks.map((video, i) => (
           <Reveal key={video.id} delay={Math.min(i * 0.05, 0.25)}>
             <LiteYouTube video={video} />
             <div className="mt-4 min-w-0">
-              <p className="truncate font-bengali text-[16px] font-bold text-ink">{shortTitle(video.title)}</p>
-              <a href={brand.youtube} target="_blank" rel="noopener noreferrer" className="mt-0.5 block text-[14px] text-ink-muted hover:text-ink">
-                {brand.name} · {video.views} views
-              </a>
+              <p className="truncate font-bengali text-[16px] font-bold text-ink">{video.title}</p>
+              <p className="mt-0.5 text-[14px] text-ink-muted">
+                {video.by} · {video.views} views
+              </p>
             </div>
           </Reveal>
         ))}
@@ -188,7 +184,7 @@ export function Channels() {
         {brands.map((b, i) => (
           <Reveal key={b.slug} delay={i * 0.05}>
             <Link href={`/channels#${b.slug}`} className="card card-hover flex h-full flex-col overflow-hidden">
-              <div className="flex h-36 items-center justify-center rounded-t-[15px]" style={{ background: b.logoBg }}>
+              <div className="flex h-36 items-center justify-center rounded-t-[11px]" style={{ background: b.logoBg }}>
                 <Image src={b.logo} alt={`${b.name} logo`} width={240} height={180} className="h-24 w-auto object-contain" />
               </div>
               <div className="flex flex-1 flex-col p-6">
@@ -210,7 +206,7 @@ export function ArtistsCta() {
   return (
     <section className="container-x py-8 md:py-12">
       <Reveal>
-        <div className="flex flex-col gap-8 rounded-[16px] border border-line bg-surface p-8 md:flex-row md:items-center md:justify-between md:p-14">
+        <div className="flex flex-col gap-8 rounded-[12px] border border-line bg-surface p-8 md:flex-row md:items-center md:justify-between md:p-14">
           <div className="max-w-[34ch]">
             <span className="label">For artists & composers</span>
             <h2 className="text-h2 mt-3 text-ink">Have a song? Bring it to Taranga.</h2>

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, Noto_Sans_Bengali } from "next/font/google";
+import { Inter, Noto_Sans_Bengali, Source_Serif_4 } from "next/font/google";
 import { site } from "@/data/site";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import "./globals.css";
 
-const fraunces = Fraunces({ variable: "--font-fraunces", subsets: ["latin"], weight: ["500", "600"], display: "swap" });
+const serif = Source_Serif_4({ variable: "--font-serif", subsets: ["latin"], weight: ["500", "600"], display: "swap" });
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
 const bengali = Noto_Sans_Bengali({ variable: "--font-bengali", subsets: ["bengali"], weight: ["700"], display: "swap" });
 
@@ -37,7 +37,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable} ${bengali.variable}`}>
+    <html lang="en" className={`${serif.variable} ${inter.variable} ${bengali.variable}`}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>

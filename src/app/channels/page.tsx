@@ -15,7 +15,7 @@ export default function Channels() {
         {brands.map((b, i) => (
           <Reveal key={b.slug} delay={Math.min(i * 0.04, 0.2)}>
             <article id={b.slug} className="card grid scroll-mt-24 overflow-hidden md:grid-cols-12">
-              <div className="flex min-h-[220px] items-center justify-center rounded-t-[15px] p-8 md:col-span-4 md:rounded-l-[15px] md:rounded-tr-none" style={{ background: b.logoBg }}>
+              <div className="flex min-h-[220px] items-center justify-center rounded-t-[11px] p-8 md:col-span-4 md:rounded-l-[11px] md:rounded-tr-none" style={{ background: b.logoBg }}>
                 <Image src={b.logo} alt={`${b.name} logo`} width={300} height={220} className="h-36 w-auto object-contain" />
               </div>
               <div className="p-8 md:col-span-8 md:p-10">
@@ -31,7 +31,7 @@ export default function Channels() {
                 <div className="grid gap-3 border-t border-line p-6 sm:grid-cols-3 md:col-span-12">
                   {videos[b.slug].slice(0, 3).map((v) => (
                     <div key={v.id}>
-                      <LiteYouTube video={v} className="rounded-[14px]" />
+                      <LiteYouTube video={v} className="rounded-[10px]" />
                       <p className="mt-2 truncate font-bengali text-[14px] font-bold text-ink">{v.title.split("।")[0].split("|")[0].split(" - ")[0].trim()}</p>
                       <p className="text-[12px] text-ink-muted">{v.views} views</p>
                     </div>

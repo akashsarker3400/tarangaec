@@ -51,7 +51,7 @@ export async function LatestFromTmc() {
       <div className="mt-12 grid gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
         {items.map((v, i) => (
           <Reveal key={v.id} delay={Math.min(i * 0.05, 0.2)}>
-            <LiteYouTube video={v} className="rounded-[14px]" />
+            <LiteYouTube video={v} className="rounded-[10px]" />
             <p className="mt-3 line-clamp-2 font-bengali text-[15px] leading-snug font-bold text-ink">{shortTitle(v.title)}</p>
           </Reveal>
         ))}

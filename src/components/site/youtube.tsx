@@ -14,7 +14,7 @@ export function LiteYouTube({ video, className, priority = false }: { video: Vid
   const thumb = `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
 
   return (
-    <div className={cn("relative aspect-video overflow-hidden rounded-[20px] bg-ink", className)}>
+    <div className={cn("relative aspect-video overflow-hidden rounded-[12px] bg-ink", className)}>
       {playing ? (
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&rel=0&modestbranding=1`}
