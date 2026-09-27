@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_Bengali, Source_Serif_4 } from "next/font/google";
-import { brands, contacts, site } from "@/data/site";
+import { brands, contacts, facebookPages, site } from "@/data/site";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import "./globals.css";
@@ -47,7 +47,7 @@ const jsonLd = {
       areaServed: "BD",
       knowsAbout: ["Bangla folk music", "Baul", "Bhatiali", "Bhawaiya", "Lalon Geeti", "Bangla music videos", "Bangla drama"],
       knowsLanguage: ["bn", "en"],
-      sameAs: [...brands.map((b) => b.youtube), ...brands.flatMap((b) => ("facebook" in b && b.facebook ? [b.facebook] : []))],
+      sameAs: [...brands.map((b) => b.youtube), ...facebookPages.map((f) => f.href)],
       brand: brands.slice(1).map((b) => ({ "@type": "Brand", name: b.name, url: b.youtube })),
       contactPoint: contacts.map((c) => ({ "@type": "ContactPoint", contactType: c.label, email: c.email, availableLanguage: ["bn", "en"] })),
     },

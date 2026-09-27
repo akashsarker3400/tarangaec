@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { brands, contacts, nav, site } from "@/data/site";
+import { brands, contacts, facebookPages, nav, site } from "@/data/site";
 
 export function Footer() {
   return (
@@ -25,7 +25,7 @@ export function Footer() {
             </ul>
           </div>
           <div className="md:col-span-3">
-            <p className="label mb-4 text-white/60">Channels</p>
+            <p className="label mb-4 text-white/60">YouTube</p>
             <ul className="space-y-2.5 text-[15px] text-white/85">
               {brands.map((b) => (
                 <li key={b.slug} className="flex items-center gap-2">
@@ -35,11 +35,16 @@ export function Footer() {
                   <a href={b.youtube} target="_blank" rel="noopener noreferrer" aria-label={`${b.name} on YouTube`} className="text-[12px] text-white/50 hover:text-white">
                     YT ↗
                   </a>
-                  {"facebook" in b && b.facebook && (
-                    <a href={b.facebook} target="_blank" rel="noopener noreferrer" aria-label={`${b.name} on Facebook`} className="text-[12px] text-white/50 hover:text-white">
-                      FB ↗
-                    </a>
-                  )}
+                </li>
+              ))}
+            </ul>
+            <p className="label mt-8 mb-4 text-white/60">Facebook</p>
+            <ul className="space-y-2.5 text-[15px] text-white/85">
+              {facebookPages.map((f) => (
+                <li key={f.href}>
+                  <a href={f.href} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                    {f.name}
+                  </a>
                 </li>
               ))}
             </ul>
