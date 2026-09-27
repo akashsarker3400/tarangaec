@@ -4,7 +4,12 @@ import { artists, faq } from "@/data/site";
 import { ArrowUpRight, PageHead, Reveal, Section } from "@/components/site/shared";
 import { Faq } from "@/components/site/faq";
 
-export const metadata: Metadata = { title: "Artists", description: artists.sub };
+export const metadata: Metadata = {
+  title: "Submit your music — release with Taranga",
+  description: "Singers, music directors and lyricists: send your songs to Taranga Electro Centre. We listen to every submission and release under a Taranga channel.",
+  alternates: { canonical: "/artists" },
+  openGraph: { title: "Release your music with Taranga", url: "/artists" },
+};
 
 export default function Artists() {
   return (

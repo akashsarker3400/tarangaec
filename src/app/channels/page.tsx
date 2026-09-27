@@ -5,11 +5,24 @@ import { videos } from "@/data/videos";
 import { LiteYouTube } from "@/components/site/youtube";
 import { ArrowUpRight, PageHead, Reveal } from "@/components/site/shared";
 
-export const metadata: Metadata = { title: "Channels", description: "The six Taranga YouTube channels: Taranga Electro Centre, Taranga Music Centre, Taranga Music, Taranga Entertainment, Bangla Entertainment and Bangla Drama." };
+export const metadata: Metadata = {
+  title: "Six YouTube channels",
+  description: "The six Taranga YouTube channels — Taranga Electro Centre, Taranga Music Centre, Taranga Music, Taranga Entertainment, Bangla Entertainment and Bangla Drama — 7.8M+ subscribers, 2.6B+ views.",
+  alternates: { canonical: "/channels" },
+  openGraph: { title: "Taranga YouTube channels", url: "/channels" },
+};
+
+const channelsJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Taranga YouTube channels",
+  itemListElement: brands.map((b, i) => ({ "@type": "ListItem", position: i + 1, url: b.youtube, name: b.name })),
+};
 
 export default function Channels() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(channelsJsonLd) }} />
       <PageHead label="Channels" title="One label. Six channels." sub="Every channel below is run by Taranga Electro Centre. Press play on the most-watched videos, or open the channel on YouTube." />
       <div className="container-x space-y-4 pb-20 md:pb-28">
         {brands.map((b, i) => (

@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { genres, socials } from "@/data/site";
 import { ArrowUpRight, CoverTile, PageHead, Reveal, Section } from "@/components/site/shared";
 
-export const metadata: Metadata = { title: "Music", description: "The Taranga catalogue: one of the largest folk-music collections in Bangladesh, plus modern, film and devotional music." };
+export const metadata: Metadata = {
+  title: "Bangla folk music catalogue",
+  description: "The Taranga catalogue: one of the largest Bangla folk-music collections in Bangladesh — Baul, Bhatiali, Bhawaiya and Lalon — plus modern, film and devotional songs.",
+  alternates: { canonical: "/music" },
+  openGraph: { title: "Taranga music catalogue", url: "/music" },
+};
 
 export default function Music() {
   return (

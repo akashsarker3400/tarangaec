@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return ["", "/about", "/music", "/channels", "/artists", "/contact"].map((p) => ({
     url: `${site.domain}${p}`,
     lastModified: now,
+    images: p === "" ? [`${site.domain}/og.jpg`] : p === "/about" ? [`${site.domain}/founder.jpg`] : undefined,
     changeFrequency: p === "" ? "weekly" : "monthly",
     priority: p === "" ? 1 : 0.7,
   }));
