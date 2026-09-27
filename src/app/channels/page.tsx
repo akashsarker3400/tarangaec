@@ -15,7 +15,7 @@ export default function Channels() {
         {brands.map((b, i) => (
           <Reveal key={b.slug} delay={Math.min(i * 0.04, 0.2)}>
             <article id={b.slug} className="card grid scroll-mt-24 overflow-hidden md:grid-cols-12">
-              <div className="flex min-h-[220px] items-center justify-center border-b border-line p-8 md:col-span-4 md:border-r md:border-b-0">
+              <div className="flex min-h-[220px] items-center justify-center p-8 md:col-span-4" style={{ background: b.logoBg }}>
                 <Image src={b.logo} alt={`${b.name} logo`} width={300} height={220} className="h-36 w-auto object-contain" />
               </div>
               <div className="p-8 md:col-span-8 md:p-10">

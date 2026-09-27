@@ -194,7 +194,7 @@ export function Channels() {
         {brands.map((b, i) => (
           <Reveal key={b.slug} delay={i * 0.05}>
             <Link href={`/channels#${b.slug}`} className="card card-hover flex h-full flex-col overflow-hidden">
-              <div className="flex h-36 items-center justify-center border-b border-line bg-white">
+              <div className="flex h-36 items-center justify-center" style={{ background: b.logoBg }}>
                 <Image src={b.logo} alt={`${b.name} logo`} width={240} height={180} className="h-24 w-auto object-contain" />
               </div>
               <div className="flex flex-1 flex-col p-6">
