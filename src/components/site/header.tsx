@@ -8,7 +8,6 @@ import { Menu, X } from "lucide-react";
 
 import { nav, site } from "@/data/site";
 import { cn } from "@/lib/utils";
-import { SpectrumRule } from "./shared";
 
 export function Header() {
   const pathname = usePathname();
@@ -64,7 +63,6 @@ export function Header() {
       </header>
 
       <div id="mobile-menu" aria-hidden={!open} className={cn("fixed inset-0 z-40 flex flex-col bg-background px-5 pt-24 pb-8 transition-opacity duration-300 lg:hidden", open ? "opacity-100" : "pointer-events-none opacity-0")}>
-        <SpectrumRule className="w-full" />
         <nav aria-label="Mobile" className="mt-6 flex flex-col">
           {nav.map((n, i) => (
             <Link key={n.href} href={n.href} tabIndex={open ? 0 : -1} onClick={() => setOpen(false)} className="flex items-baseline gap-4 border-b border-line py-4 font-heading text-[32px] font-extrabold tracking-[-0.02em]">

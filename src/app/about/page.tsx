@@ -29,7 +29,7 @@ export default function About() {
               <p>Before 2000, {site.founder} started Taranga Electro Centre in the age of cassettes and CDs. There was no online music, no streaming and no YouTube. A song reached a listener only if someone recorded it, pressed it and put it on a shop shelf — so that is what he did.</p>
               <p>The early years were a struggle. Building a label from nothing meant finding artists nobody had recorded, paying for studio time and pressing before a single copy was sold, and earning the trust of shopkeepers one town at a time. He kept going.</p>
               <p>It paid off. In the cassette and CD era Taranga became one of the most successful music companies in the country and an integral part of entertainment in rural Bangladesh. Its folk recordings — Baul, Bhatiali, Bhawaiya and more — sold across the country and grew into one of the largest folk catalogues in Bangladesh.</p>
-              <p>When music moved online, Taranga moved with it. The same catalogue now lives on six YouTube channels; the YouTube Creator Awards on the shelf behind him mark the milestones. Two decades on, his belief is unchanged: music brings the world closer together.</p>
+              <p>Music moved online, and after 2016 Taranga moved with it. The same catalogue now lives on six YouTube channels; the YouTube Creator Awards on the shelf behind him mark the milestones. Two decades on, his belief is unchanged: music brings the world closer together.</p>
             </div>
           </Reveal>
         </div>
@@ -38,7 +38,7 @@ export default function About() {
         <ol className="mt-12 grid gap-4 md:grid-cols-4">
           {timeline.map((t, i) => (
             <Reveal key={t.when} delay={i * 0.06} className="card flex h-full flex-col p-6">
-              <span className="inline-flex w-fit rounded-full bg-sky px-3 py-1 text-[12px] font-semibold text-ink">{t.when}</span>
+              <span className="label">{t.when}</span>
               <h3 className="text-h3 mt-5">{t.title}</h3>
               <p className="mt-2 text-[15px] text-ink-muted">{t.text}</p>
             </Reveal>

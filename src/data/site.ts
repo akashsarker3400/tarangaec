@@ -27,18 +27,19 @@ export const nav = [
 ];
 
 export const hero = {
-  kicker: "Music label · Bangladesh · since the cassette era",
+  kicker: "Music label · since the cassette era",
   title: "One of the oldest music labels in Bangladesh.",
   lead: "Taranga Electro Centre has been part of the music industry for two decades — from cassettes and CDs to every streaming platform — and holds one of the largest folk-music catalogues in the country. We believe in bringing the world closer together through music.",
   primary: { label: "Explore the catalogue", href: "/music" },
   secondary: { label: "Submit your music", href: "/artists" },
 };
 
+// YouTube totals are summed across the six channels (subscribers, lifetime views, uploads). Checked Sep 2026.
 export const stats = [
+  { text: "7.8M+", label: "YouTube subscribers" },
+  { text: "2.6B+", label: "Video views" },
+  { text: "3,600+", label: "Videos published" },
   { value: 20, suffix: "+", label: "Years in music" },
-  { value: 6, label: "YouTube channels" },
-  { text: "Folk", label: "The heart of the catalogue" },
-  { label: "From cassette to streaming", text: "1990s" },
 ];
 
 export const whatWeDo = {
@@ -66,7 +67,7 @@ export const brands = [
 export const timeline = [
   { when: "1990s", title: "The cassette era", text: "Subrata Kumar Deb starts Taranga Electro Centre in the days of cassettes and CDs. There was no online music then; Taranga released CDs and built a folk catalogue from the ground up." },
   { when: "2000s", title: "Rural Bangladesh", text: "Taranga becomes an integral part of the entertainment business in rural Bangladesh." },
-  { when: "2010s", title: "Digital", text: "The catalogue moves to video channels and streaming platforms; new channels for music, entertainment and drama." },
+  { when: "2016 →", title: "Going digital", text: "After 2016 Taranga moves online. The catalogue goes to YouTube and streaming, and new channels follow for music, entertainment and drama." },
   { when: "Today", title: "Two decades on", text: "One of the oldest labels in Bangladesh with one of its largest folk catalogues, released to the world across six Taranga YouTube channels." },
 ];
 

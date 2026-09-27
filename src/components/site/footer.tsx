@@ -1,16 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { brands, contacts, nav, site } from "@/data/site";
-import { SpectrumRule } from "./shared";
 
 export function Footer() {
   return (
-    <footer className="mt-auto bg-indigo text-white">
+    <footer className="mt-auto bg-ink text-white">
       <div className="container-x py-16">
-        <SpectrumRule className="w-full" height={4} />
-        <div className="mt-12 grid gap-10 md:grid-cols-12">
+        <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-4">
-            <p className="font-bengali text-[clamp(56px,7vw,96px)] leading-none font-bold">{site.bengali}</p>
+            <Image src="/brand/taranga.png" alt={`${site.name} logo`} width={94} height={120} className="h-20 w-auto" />
             <p className="mt-4 max-w-sm text-[15px] text-white/75">{site.description}</p>
           </div>
           <div className="md:col-span-2">

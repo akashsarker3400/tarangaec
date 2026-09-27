@@ -15,7 +15,7 @@ export default function Channels() {
         {brands.map((b, i) => (
           <Reveal key={b.slug} delay={Math.min(i * 0.04, 0.2)}>
             <article id={b.slug} className="card grid scroll-mt-24 overflow-hidden md:grid-cols-12">
-              <div className="flex min-h-[220px] items-center justify-center p-8 md:col-span-4" style={{ background: b.logoBg }}>
+              <div className="flex min-h-[220px] items-center justify-center rounded-t-[15px] p-8 md:col-span-4 md:rounded-l-[15px] md:rounded-tr-none" style={{ background: b.logoBg }}>
                 <Image src={b.logo} alt={`${b.name} logo`} width={300} height={220} className="h-36 w-auto object-contain" />
               </div>
               <div className="p-8 md:col-span-8 md:p-10">
@@ -27,7 +27,7 @@ export default function Channels() {
                   <ArrowUpRight className="size-4" />
                 </a>
               </div>
-              {videos[b.slug]?.length ? (
+              {["taranga-electro-centre", "taranga-music-centre"].includes(b.slug) && videos[b.slug]?.length ? (
                 <div className="grid gap-3 border-t border-line p-6 sm:grid-cols-3 md:col-span-12">
                   {videos[b.slug].slice(0, 3).map((v) => (
                     <div key={v.id}>
