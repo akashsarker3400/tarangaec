@@ -6,11 +6,23 @@ import { Stats } from "@/components/site/home";
 import { Faq } from "@/components/site/faq";
 import { faq } from "@/data/site";
 
-export const metadata: Metadata = { title: "About", description: site.description };
+export const metadata: Metadata = {
+  title: "About — founded by Subrata Kumar Deb",
+  description: `${site.name} was started by ${site.founder} in the cassette and CD era, before 2000. One of the oldest music labels in Bangladesh with one of the largest folk catalogues.`,
+  alternates: { canonical: "/about" },
+  openGraph: { title: `About ${site.name}`, description: site.description, url: "/about", images: ["/founder.jpg"] },
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
 
 export default function About() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <PageHead label="About" title="Two decades of music, from cassette to streaming." sub={site.description} />
       <Stats />
       <Section label="The founder" tone="surface">

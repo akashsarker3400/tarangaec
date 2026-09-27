@@ -3,7 +3,12 @@ import { contacts, site, socials } from "@/data/site";
 import { ArrowUpRight, PageHead, Reveal } from "@/components/site/shared";
 import { cn } from "@/lib/utils";
 
-export const metadata: Metadata = { title: "Contact", description: `Get in touch with ${site.name}: A&R, publishing and sync, legal.` };
+export const metadata: Metadata = {
+  title: "Contact",
+  description: `Contact ${site.name}: A&R (ar@tarangaec.com), publishing, TV and sync (contact@tarangaec.com), legal (legal@ansmusic.io).`,
+  alternates: { canonical: "/contact" },
+  openGraph: { title: `Contact ${site.name}`, url: "/contact" },
+};
 
 export default function Contact() {
   return (
