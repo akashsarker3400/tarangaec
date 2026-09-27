@@ -47,7 +47,7 @@ const jsonLd = {
       areaServed: "BD",
       knowsAbout: ["Bangla folk music", "Baul", "Bhatiali", "Bhawaiya", "Lalon Geeti", "Bangla music videos", "Bangla drama"],
       knowsLanguage: ["bn", "en"],
-      sameAs: brands.map((b) => b.youtube),
+      sameAs: [...brands.map((b) => b.youtube), ...brands.flatMap((b) => ("facebook" in b && b.facebook ? [b.facebook] : []))],
       brand: brands.slice(1).map((b) => ({ "@type": "Brand", name: b.name, url: b.youtube })),
       contactPoint: contacts.map((c) => ({ "@type": "ContactPoint", contactType: c.label, email: c.email, availableLanguage: ["bn", "en"] })),
     },

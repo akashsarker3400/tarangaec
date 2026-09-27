@@ -35,6 +35,11 @@ export function Footer() {
                   <a href={b.youtube} target="_blank" rel="noopener noreferrer" aria-label={`${b.name} on YouTube`} className="text-[12px] text-white/50 hover:text-white">
                     YT ↗
                   </a>
+                  {"facebook" in b && b.facebook && (
+                    <a href={b.facebook} target="_blank" rel="noopener noreferrer" aria-label={`${b.name} on Facebook`} className="text-[12px] text-white/50 hover:text-white">
+                      FB ↗
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

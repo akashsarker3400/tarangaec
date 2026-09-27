@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { contacts, site, socials } from "@/data/site";
+import { brands, contacts, site, socials } from "@/data/site";
 import { ArrowUpRight, PageHead, Reveal } from "@/components/site/shared";
 import { cn } from "@/lib/utils";
 
@@ -40,6 +40,19 @@ export default function Contact() {
                 </a>
               </li>
             ))}
+          </ul>
+          <p className="label mt-8 border-t border-line pt-6">Facebook</p>
+          <ul className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+            {brands
+              .filter((b) => "facebook" in b && b.facebook)
+              .map((b) => (
+                <li key={b.slug}>
+                  <a href={b.facebook} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 text-[17px] font-semibold hover:text-sky-ink">
+                    {b.name}
+                    <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+                </li>
+              ))}
           </ul>
           <p className="mt-8 border-t border-line pt-5 text-[14px] text-ink-muted">{site.name}, Bangladesh.</p>
         </Reveal>
