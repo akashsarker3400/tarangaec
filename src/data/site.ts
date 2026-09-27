@@ -56,11 +56,11 @@ export const whatWeDo = {
 export const genres = ["Folk", "Baul", "Bhatiali", "Bhawaiya", "Lalon", "Modern", "Film", "Devotional", "Drama"];
 
 export const brands = [
-  { slug: "taranga-electro-centre", name: "Taranga Electro Centre", role: "Main channel", text: "The main channel and home of the folk catalogue.", logo: "/brand/taranga.png", accent: "#00a0e0", logoBg: "#00a0e0", youtube: "https://www.youtube.com/@TarangaElectroCentre" },
+  { slug: "taranga-electro-centre", name: "Taranga Electro Centre", role: "Main channel", text: "The main channel and home of the folk catalogue.", logo: "/brand/taranga.png", accent: "#00a0e0", logoBg: "#00a0e0", youtube: "https://www.youtube.com/@TarangaElectroCentre", facebook: "https://www.facebook.com/tarangaec3400" },
   { slug: "taranga-music-centre", name: "Taranga Music Centre", role: "Music · TMC", text: "Music releases and recordings under the TMC name.", logo: "/brand/tmc.png", accent: "#e01020", logoBg: "#e01020", youtube: "https://www.youtube.com/@tarangamusiccenter" },
-  { slug: "taranga-music", name: "Taranga Music", role: "Music", text: "Music videos and new releases.", logo: "/brand/taranga-music.webp", accent: "#2b3990", logoBg: "#2b3990", youtube: "https://www.youtube.com/@TarangaMusic" },
-  { slug: "taranga-entertainment", name: "Taranga Entertainment", role: "Entertainment", text: "Comedy and entertainment videos.", logo: "/brand/taranga-entertainment.png", accent: "#1a9be0", logoBg: "#1a9be0", youtube: "https://www.youtube.com/@TarangaEntertainment" },
-  { slug: "bangla-entertainment", name: "Bangla Entertainment", role: "Entertainment", text: "Bengali comedy and short films for a wide audience.", logo: "/brand/bangla-entertainment.webp", accent: "#008f3e", logoBg: "#00552a", youtube: "https://www.youtube.com/@BanglaEntertainmentNow" },
+  { slug: "taranga-music", name: "Taranga Music", role: "Music", text: "Music videos and new releases.", logo: "/brand/taranga-music.webp", accent: "#2b3990", logoBg: "#2b3990", youtube: "https://www.youtube.com/@TarangaMusic", facebook: "https://www.facebook.com/tarangamusicofficial" },
+  { slug: "taranga-entertainment", name: "Taranga Entertainment", role: "Entertainment", text: "Comedy and entertainment videos.", logo: "/brand/taranga-entertainment.png", accent: "#1a9be0", logoBg: "#1a9be0", youtube: "https://www.youtube.com/@TarangaEntertainment", facebook: "https://www.facebook.com/BanglaComedyNow" },
+  { slug: "bangla-entertainment", name: "Bangla Entertainment", role: "Entertainment", text: "Bengali comedy and short films for a wide audience.", logo: "/brand/bangla-entertainment.webp", accent: "#008f3e", logoBg: "#00552a", youtube: "https://www.youtube.com/@BanglaEntertainmentNow", facebook: "https://www.facebook.com/BanglaEntertainmentNow" },
   { slug: "bangla-drama", name: "Bangla Drama", role: "Drama", text: "Bengali drama and short films.", logo: "/brand/bangla-drama.png", accent: "#008f3e", logoBg: "#00552a", youtube: "https://www.youtube.com/@bangladrama3400" },
 ];
 

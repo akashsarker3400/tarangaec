@@ -35,10 +35,18 @@ export default function Channels() {
                 <span className="label">{b.role}</span>
                 <h2 className="text-h2 mt-3">{b.name}</h2>
                 <p className="mt-4 max-w-[60ch] text-[17px] text-ink-muted">{b.text}</p>
-                <a href={b.youtube} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm mt-7">
-                  Watch on YouTube
-                  <ArrowUpRight className="size-4" />
-                </a>
+                <div className="mt-7 flex flex-wrap gap-2">
+                  <a href={b.youtube} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm">
+                    YouTube
+                    <ArrowUpRight className="size-4" />
+                  </a>
+                  {"facebook" in b && b.facebook && (
+                    <a href={b.facebook} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm">
+                      Facebook
+                      <ArrowUpRight className="size-4" />
+                    </a>
+                  )}
+                </div>
               </div>
               {["taranga-electro-centre", "taranga-music-centre"].includes(b.slug) && videos[b.slug]?.length ? (
                 <div className="grid gap-3 border-t border-line p-6 sm:grid-cols-3 md:col-span-12">
