@@ -54,7 +54,13 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 flex flex-col gap-2 border-t border-white/15 pt-6 text-[13px] text-white/60 sm:flex-row sm:justify-between">
-          <span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span>
+          <span>
+            © {new Date().getFullYear()} {site.name}. An{" "}
+            <a href="https://ansmusic.io" target="_blank" rel="noopener noreferrer" className="text-white/85 underline-offset-2 hover:text-white hover:underline">
+              ANS Music
+            </a>{" "}
+            company. All rights reserved.
+          </span>
           <span>{site.tagline}</span>
         </div>
       </div>

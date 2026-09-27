@@ -30,6 +30,7 @@ const jsonLd = {
   url: site.domain,
   logo: `${site.domain}/brand/taranga.png`,
   email: site.email,
+  parentOrganization: { "@type": "Organization", name: "ANS Music", url: "https://ansmusic.io" },
   description: site.description,
   areaServed: "BD",
   brand: ["Taranga Music Centre", "Taranga Music", "Taranga Entertainment", "Bangla Entertainment", "Bangla Drama"].map((n) => ({ "@type": "Brand", name: n })),
