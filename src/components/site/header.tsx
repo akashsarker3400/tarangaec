@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -32,9 +33,9 @@ export function Header() {
     <>
       <header className={cn("fixed inset-x-0 top-0 z-50 h-[72px] border-b bg-background transition-colors", scrolled ? "border-line" : "border-transparent")}>
         <div className="container-x flex h-full items-center justify-between gap-4">
-          <Link href="/" className="flex items-baseline gap-3" aria-label={site.name}>
-            <span className="font-bengali text-[26px] leading-none font-bold text-ink">{site.bengali}</span>
-            <span className="hidden font-heading text-[15px] leading-none font-bold tracking-[-0.01em] text-ink sm:block">
+          <Link href="/" className="flex items-center gap-3" aria-label={site.name}>
+            <Image src="/brand/taranga.png" alt="" width={94} height={120} priority className="h-12 w-auto" />
+            <span className="hidden font-heading text-[16px] leading-none font-bold tracking-[-0.01em] text-ink sm:block">
               Taranga <span className="text-ink-muted">Electro Centre</span>
             </span>
           </Link>
