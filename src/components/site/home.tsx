@@ -191,6 +191,9 @@ export function Channels() {
                 <span className="label">{b.role}</span>
                 <h3 className="text-h3 mt-2">{b.name}</h3>
                 <p className="mt-2 text-[15px] text-ink-muted">{b.text}</p>
+                <p className="mt-auto pt-5 text-[13px] text-ink-muted">
+                  {b.subscribers} YouTube subscribers{"followers" in b && b.followers ? ` · ${b.followers} Facebook followers` : ""}
+                </p>
               </div>
             </Link>
           </Reveal>
