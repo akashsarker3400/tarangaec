@@ -37,12 +37,12 @@ export default function Channels() {
                 <p className="mt-4 max-w-[60ch] text-[17px] text-ink-muted">{b.text}</p>
                 <div className="mt-7 flex flex-wrap gap-2">
                   <a href={b.youtube} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm">
-                    YouTube
+                    YouTube · {b.subscribers} subscribers
                     <ArrowUpRight className="size-4" />
                   </a>
                   {"facebook" in b && b.facebook && (
                     <a href={b.facebook} target="_blank" rel="noopener noreferrer" className="btn-ghost btn-sm">
-                      Facebook
+                      Facebook{"followers" in b && b.followers ? ` · ${b.followers} followers` : ""}
                       <ArrowUpRight className="size-4" />
                     </a>
                   )}
