@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { brands } from "@/data/site";
+import { brands, facebookPages } from "@/data/site";
 import { videos } from "@/data/videos";
 import { LiteYouTube } from "@/components/site/youtube";
-import { ArrowUpRight, PageHead, Reveal } from "@/components/site/shared";
+import { ArrowUpRight, PageHead, Reveal, Section } from "@/components/site/shared";
 
 export const metadata: Metadata = {
   title: "Six YouTube channels",
@@ -24,7 +24,7 @@ export default function Channels() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(channelsJsonLd) }} />
       <PageHead label="Channels" title="One label. Six channels." sub="Every channel below is run by Taranga Electro Centre. Press play on the most-watched videos, or open the channel on YouTube." />
-      <div className="container-x space-y-4 pb-20 md:pb-28">
+      <div className="container-x space-y-4 pb-16 md:pb-24">
         {brands.map((b, i) => (
           <Reveal key={b.slug} delay={Math.min(i * 0.04, 0.2)}>
             <article id={b.slug} className="card grid scroll-mt-24 overflow-hidden md:grid-cols-12">
@@ -63,6 +63,21 @@ export default function Channels() {
           </Reveal>
         ))}
       </div>
+      <Section id="facebook" label="Facebook" title="Five pages on Facebook." tone="surface" className="pb-20 md:pb-28">
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {facebookPages.map((f, i) => (
+            <Reveal key={f.href} delay={i * 0.04}>
+              <a href={f.href} target="_blank" rel="noopener noreferrer" className="card card-hover group flex h-full items-center justify-between gap-4 p-6">
+                <span>
+                  <span className="block text-h3">{f.name}</span>
+                  {f.followers && <span className="mt-1 block text-[14px] text-ink-muted">{f.followers} followers</span>}
+                </span>
+                <ArrowUpRight className="size-5 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            </Reveal>
+          ))}
+        </ul>
+      </Section>
     </>
   );
 }

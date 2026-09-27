@@ -58,11 +58,20 @@ export const genres = ["Folk", "Baul", "Bhatiali", "Bhawaiya", "Lalon", "Modern"
 // subscribers / followers checked Sep 2026
 export const brands = [
   { slug: "taranga-electro-centre", name: "Taranga Electro Centre", role: "Main channel", text: "The main channel and home of the folk catalogue.", logo: "/brand/taranga.png", accent: "#00a0e0", logoBg: "#00a0e0", youtube: "https://www.youtube.com/@TarangaElectroCentre", facebook: "https://www.facebook.com/tarangaec3400", subscribers: "1.86M" },
-  { slug: "taranga-music-centre", name: "Taranga Music Centre", role: "Music · TMC", text: "Music releases and recordings under the TMC name.", logo: "/brand/tmc.png", accent: "#e01020", logoBg: "#e01020", youtube: "https://www.youtube.com/@tarangamusiccenter", subscribers: "333K" },
-  { slug: "taranga-music", name: "Taranga Music", role: "Music", text: "Music videos and new releases.", logo: "/brand/taranga-music.webp", accent: "#2b3990", logoBg: "#2b3990", youtube: "https://www.youtube.com/@TarangaMusic", facebook: "https://www.facebook.com/tarangamusicofficial", subscribers: "127K", followers: "32K" },
-  { slug: "taranga-entertainment", name: "Taranga Entertainment", role: "Entertainment", text: "Comedy and entertainment videos.", logo: "/brand/taranga-entertainment.png", accent: "#1a9be0", logoBg: "#1a9be0", youtube: "https://www.youtube.com/@TarangaEntertainment", facebook: "https://www.facebook.com/BanglaComedyNow", subscribers: "1.58M", followers: "732K" },
+  { slug: "taranga-music-centre", name: "Taranga Music Centre", role: "Music · TMC", text: "Music releases and recordings under the TMC name.", logo: "/brand/tmc.png", accent: "#e01020", logoBg: "#e01020", youtube: "https://www.youtube.com/@tarangamusiccenter", subscribers: "333K", facebook: "https://www.facebook.com/tarangamusicofficial", followers: "32K" },
+  { slug: "taranga-music", name: "Taranga Music", role: "Music", text: "Music videos and new releases.", logo: "/brand/taranga-music.webp", accent: "#2b3990", logoBg: "#2b3990", youtube: "https://www.youtube.com/@TarangaMusic", subscribers: "127K" },
+  { slug: "taranga-entertainment", name: "Taranga Entertainment", role: "Entertainment", text: "Comedy and entertainment videos.", logo: "/brand/taranga-entertainment.png", accent: "#1a9be0", logoBg: "#1a9be0", youtube: "https://www.youtube.com/@TarangaEntertainment", subscribers: "1.58M" },
   { slug: "bangla-entertainment", name: "Bangla Entertainment", role: "Entertainment", text: "Bengali comedy and short films for a wide audience.", logo: "/brand/bangla-entertainment.webp", accent: "#008f3e", logoBg: "#00552a", youtube: "https://www.youtube.com/@BanglaEntertainmentNow", facebook: "https://www.facebook.com/BanglaEntertainmentNow", subscribers: "2.67M", followers: "1.1M" },
   { slug: "bangla-drama", name: "Bangla Drama", role: "Drama", text: "Bengali drama and short films.", logo: "/brand/bangla-drama.png", accent: "#008f3e", logoBg: "#00552a", youtube: "https://www.youtube.com/@bangladrama3400", subscribers: "1.29M" },
+];
+
+// Facebook pages (followers checked Sep 2026). Some pages stand on their own, apart from the YouTube channels.
+export const facebookPages = [
+  { name: "Taranga Electro Centre", href: "https://www.facebook.com/tarangaec3400" },
+  { name: "Taranga Music Centre", href: "https://www.facebook.com/tarangamusicofficial", followers: "32K" },
+  { name: "Bangla Entertainment", href: "https://www.facebook.com/BanglaEntertainmentNow", followers: "1.1M" },
+  { name: "Bangla Entertainment Video", href: "https://www.facebook.com/banglaentertainmentvideo.bd", followers: "270K" },
+  { name: "Bangla Comedy", href: "https://www.facebook.com/BanglaComedyNow", followers: "732K" },
 ];
 
 export const timeline = [
